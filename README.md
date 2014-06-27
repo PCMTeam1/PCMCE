@@ -1,6 +1,14 @@
 PCMCE
 =====
 
-Project PCM Comparator Editor
+Project PCM Comparator Editor (PCMCE)
 
-This an application to edit and compare some PCMs.
+This is an application to edit and compare some PCMs.
+
+developed by:
+
+- CHAIGNEAU David
+- Yves Lemonnier
+- Yves Mocquard
+- Laurent Martin
+- Simon Gouzien
