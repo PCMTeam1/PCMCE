@@ -12,6 +12,6 @@ public class FilterElement {
 	private boolean exact;
 	boolean isTrue( ICellContent valTest )
 	{
-		
+		return false; // n'importe quoi
 	}
 }
