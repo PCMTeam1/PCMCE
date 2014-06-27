@@ -3,5 +3,4 @@ PCMCE
 
 Project PCM Comparator Editor
 
-
-Test
+This an application to edit and compare some PCMs.
