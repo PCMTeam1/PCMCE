@@ -4,8 +4,8 @@ import java.util.List;
 
 import fr.istic.dugl.pcmce.shared.FieldVerifier;
 import fr.istic.dugl.pcmce.ui.AccueilPanel;
-import fr.istic.dugl.pcmce.client.SuccesService;
-import fr.istic.dugl.pcmce.client.SuccesServiceAsync;
+import fr.istic.dugl.pcmce.client.GreetingService;
+import fr.istic.dugl.pcmce.client.GreetingServiceAsync;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -19,6 +19,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DeckPanel;
 import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
@@ -39,9 +40,9 @@ public class Project_PCMCE implements EntryPoint {
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting service.
 	 */
-	private final GreetingServiceAsync greetingService = GWT
-			.create(GreetingService.class);
-	private final SuccesServiceAsync succesService = GWT.create(SuccesService.class);
+	private final GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
+	private HorizontalPanel  HorizontalPanel = new HorizontalPanel();
+	private Button ButtonTest = new Button("test");
 	
 	static private DeckPanel deckPanel = new DeckPanel();
 	
@@ -50,23 +51,41 @@ public class Project_PCMCE implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
-
-		RootPanel.get().add(deckPanel);
-		deckPanel.add(Pages.LIST_NOMS.getPanel());
-		deckPanel.add(Pages.LIST_NOMS.getAccueilPanel());
 		
+		final Button sendButton = new Button("Send");
+		// We can add style names to widgets
+		sendButton.addStyleName("sendButton");
+		
+		deckPanel.setVisible(true);
+		deckPanel.setSize("1024", "768");
+		deckPanel.add(sendButton);
+		deckPanel.showWidget(0);
+		RootPanel.get("mainDiv").add(deckPanel);
+		// Add the nameField and sendButton to the RootPanel
+		// Use RootPanel.get() to get the entire body element
+		
+		
+		/*
+		HorizontalPanel.add(ButtonTest);
+		deckPanel.add(HorizontalPanel);
+
+		deckPanel.add(Pages.LIST_NOMS.getAccueilPanel());
 		deckPanel.showWidget(Pages.LIST_NOMS.ordinal());
-		envoieNomServer();
+		
+		RootPanel.get().add(deckPanel);
+		//sendNameToServer();
+		
+		*/
 	}
 	
 	public static void show(Pages page) {
 		deckPanel.showWidget(page.ordinal());
 	}
 
-	private  void envoieNomServer() {
+	private  void sendNameToServer() {
 
-		 String nom = "toto";
-         succesService.envoieNomServer(nom, new AsyncCallback<List<String>>() {
+		 String nom = "AccueilPanel";
+		 greetingService.greetServer(nom, new AsyncCallback<String>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
@@ -75,9 +94,11 @@ public class Project_PCMCE implements EntryPoint {
 			}
 
 			@Override
-			public void onSuccess(List<String> result) {
+			public void onSuccess(String result) {
 				AccueilPanel page = (AccueilPanel) Pages.LIST_NOMS.getAccueilPanel();
+				// page.init(result);
 				page.AccueilPanelInit();
+				deckPanel.add(new HTML("<b>"+result+"</b>"));
 				Project_PCMCE.show(Pages.LIST_NOMS);
 			}
 		}); 

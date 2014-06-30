@@ -1,24 +1,35 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
+
 public interface ICell {
-
-	  public  java.lang.String getName();
+	
+	  public int getId();
 	  
-	  public  void setName(java.lang.String name);
+	  public void setId(int id);
+		
+	  public  String getName();
+	  
+	  public  void setName(String name);
 
-	  public  java.lang.String getVerbatim();
+	  public  String getVerbatim();
 
-	  public  void setVerbatim(java.lang.String verbatim);
+	  public  void setVerbatim(String verbatim);
 	  
 	  public  int getRow();
 
 	  public  void setRow(int row);
 	  
+	  public  int getRowSpan();
+
+	  public  void setRowSpan(int rowSpan);
+	  
 	  public  int getColumn();
 	  
 	  public  void setColumn(int column);
 	  
-	  public int getId(int id);
+	  public  int getColumnSpan();
+	  
+	  public  void setColumnSpan(int columnSpan);
 	  
 	  public ICellContent getCellContent();
 	  
