@@ -5,7 +5,8 @@
          version="2.5"
          xmlns="http://java.sun.com/xml/ns/javaee">
 
-  <!-- Servlets -->
+  <!-- Servlets
+  -->
   <servlet>
     <servlet-name>greetServlet</servlet-name>
     <servlet-class>fr.istic.dugl.pcmce.server.GreetingServiceImpl</servlet-class>
@@ -15,7 +16,19 @@
     <servlet-name>greetServlet</servlet-name>
     <url-pattern>/project_pcmce/greet</url-pattern>
   </servlet-mapping>
-  
+
+  <!-- Servlets
+	<servlet>
+		<servlet-name>serial</servlet-name>
+		<servlet-class>fr.istic.dugl.pcmce.server.SuccesServerImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>serial</servlet-name>
+		<url-pattern>/project_pcmce/lesSucces</url-pattern>
+	</servlet-mapping>
+ 
+    -->
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Project_PCMCE.html</welcome-file>
