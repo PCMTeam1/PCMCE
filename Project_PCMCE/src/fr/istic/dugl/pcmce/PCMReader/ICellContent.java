@@ -9,8 +9,9 @@ public interface ICellContent {
 		EMPTY,
 		COMPOSITE,
 		STRING,
-		
+		INCONSISTENT,
 	}
+	
 	public boolean isInteger();
 	public boolean isDouble();
 	public boolean isBoolean();
@@ -18,5 +19,6 @@ public interface ICellContent {
 	public boolean isEmpty();
 	public boolean isComposite();
 	public boolean isString();
+	public boolean isInconsistent();
 	public EnumTypeCellContent getCellContentType();
 }

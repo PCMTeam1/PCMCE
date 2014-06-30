@@ -2,6 +2,8 @@ package fr.istic.dugl.pcmce.PCMReader;
 
 public interface IPCM {
 	  
+	  public void loadPCM(String nomPCM);
+	
 	  public java.lang.String getTitle();
 	  
 	  public void setTitle(java.lang.String title);

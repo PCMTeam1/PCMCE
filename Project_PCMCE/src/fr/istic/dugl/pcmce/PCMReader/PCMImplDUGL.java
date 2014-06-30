@@ -1,25 +1,33 @@
 package fr.istic.dugl.pcmce.PCMReader;
 import java.util.List;
 
+import pcmmm.PCM;
+
 
 public class PCMImplDUGL implements IPCM {
+	
+	private PCM pcm;
+	private List<IMatrix> listMatrices;
 
 	@Override
+	public void loadPCM(String fileName){
+		pcm = new PCMReader().getPCM(fileName);
+	}
+	
+	@Override
 	public String getTitle() {
-		// TODO Auto-generated method stub
-		return null;
+		return pcm.getTitle();
 	}
 
 	@Override
 	public void setTitle(String title) {
-		// TODO Auto-generated method stub
+		pcm.setTitle(title);
 
 	}
 
 	@Override
 	public List<String> getDescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return pcm.getDescription();
 	}
 
 	@Override
@@ -30,13 +38,12 @@ public class PCMImplDUGL implements IPCM {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return pcm.getName();
 	}
 
 	@Override
 	public void setName(String name) {
-		// TODO Auto-generated method stub
+		pcm.setName(name);
 
 	}
 
