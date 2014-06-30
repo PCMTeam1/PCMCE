@@ -14,10 +14,6 @@ public interface IMatrix {
 
 	  public ICell getCell(int row, int column);
 	  
-	  public java.util.List<ICell> getHeaders();
-	  
-	  public java.util.List<ICell> getProduct();
-	  
 	  public int getNbHeaderProductColumn();
 	  
 	  public int getNbHeaderFeatureRows();
