@@ -11,6 +11,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FileUpload;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -22,7 +23,18 @@ public class AccueilPanel extends VerticalPanel{
 
 	FlexTable table = new FlexTable();
 	
-	static final int NAME_COLUMN = 1;
+	final Label lblSelectFile = new Label("Enter File's url: ");
+	final TextBox txtLoadFile = new TextBox();
+	final Label lblSelectFileBrowse = new Label("or browse it: ");
+	final FileUpload browseBtn = new FileUpload();
+	final Button loadBtn = new Button("Load");
+	final Label errorLbl = new Label();
+	final TabLayoutPanel panel = new TabLayoutPanel(35, Unit.PX);
+	VerticalPanel loadFilePanel = new VerticalPanel();
+	VerticalPanel verticaltabPanel = new VerticalPanel();
+	
+	
+	static final int NAME_COLUMN = 0;
 	
 	public AccueilPanel() {
 		this.add(table);
@@ -30,16 +42,12 @@ public class AccueilPanel extends VerticalPanel{
 	
 	public void AccueilPanelInit(){
 	
-	final Label lblSelectFile = new Label("Enter File's url: ");
-	final TextBox txtLoadFile = new TextBox();
-	final Label lblSelectFileBrowse = new Label("or browse it: ");
-	final FileUpload browseBtn = new FileUpload();
-	final Button loadBtn = new Button("Load");
-	txtLoadFile.setText("Enter your URL here");
-	final Label errorLbl = new Label();
-	final TabLayoutPanel panel = new TabLayoutPanel(35, Unit.PX);
-	VerticalPanel loadFilePanel = new VerticalPanel();
-	VerticalPanel verticaltabPanel = new VerticalPanel();
+	table.clear();		
+		
+	txtLoadFile.setText("Enter your URL here");	
+	table.add(txtLoadFile);	
+
+	this.add(table);
 	/*
 	loadFilePanel.addStyleName("verticalLoadPanelContainer");
 	verticaltabPanel.addStyleName("verticalTabPanelContainer");

@@ -1,14 +1,16 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
+import java.util.List;
+
 public interface IMatrix {
 	
-	  public java.lang.String getName();
+	  public String getName();
 	  
-	  public void setName(java.lang.String name);
+	  public void setName( String name);
 	  
-	  public java.util.List<ICell> getCells();
+	  public List<ICell> getCells();
 	  
-	  public java.lang.String getId();
+	  public String getId();
 	  
 	  public void setId(java.lang.String id);
 
@@ -18,13 +20,14 @@ public interface IMatrix {
 	  
 	  public int getNbHeaderFeatureRows();
 	  
-	  public java.util.List<ICell> getHeaderProducts();
+	  public List<ICell> getHeaderProducts();
 
-	  public java.util.List<ICell> getHeaderFeatures();
+	  public List<ICell> getHeaderFeatures();
 	  
-	  public java.util.List<ICell> getExtras();
+	  public List<ICell> getExtras();
 	  
 	  public ICell[][] getTabCells();
+	  
 	  
 	  
 }
