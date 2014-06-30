@@ -27,7 +27,7 @@ import pcmmm.VariabilityConcept;
 
 
 /**
- * Basic tests for the PCM reader
+ * Basic tests for the PCM reader.
  * @author Yves LMDG
  *
  */
