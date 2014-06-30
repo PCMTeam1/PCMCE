@@ -161,7 +161,7 @@
 			
 		</g>
 		<g id="_MUiVMOAJEDGRGbAz-o6MhQ">
-			<rect x="747" y="430" width="170" height="210" rx="5" ry="5" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
+			<rect x="747" y="430" width="170" height="209" rx="5" ry="5" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
 			<text x="832" y="448" font-size="12" text-anchor="middle" font-style="normal" font-weight="bold" fill="#696969">« Interface »</text>
 			<text x="832" y="466" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">ICellContent</text>
 			<line x1="747" y1="472" x2="917" y2="472" stroke-width="1.0" stroke="#CCCCCC"/>
@@ -208,9 +208,9 @@
 			
 		</g>
 		<g id="_4mhdAOAJEDGRGbAz-o6MhQ">
-			<rect x="332" y="801" width="204" height="35" rx="5" ry="5" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
-			<text x="434" y="819" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">CellContentCompositeImplDUGL</text>
-			<line x1="332" y1="825" x2="536" y2="825" stroke-width="1.0" stroke="#CCCCCC"/>
+			<rect x="335" y="801" width="204" height="35" rx="5" ry="5" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
+			<text x="437" y="819" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">CellContentCompositeImplDUGL</text>
+			<line x1="335" y1="825" x2="539" y2="825" stroke-width="1.0" stroke="#CCCCCC"/>
 			
 		</g>
 		<g id="_hPNi4OAKEDGRGbAz-o6MhQ">
@@ -239,9 +239,9 @@
 			
 		</g>
 		<g id="_bQ_f4OApEDG81PypsE2SCg">
-			<rect x="952" y="9" width="92" height="50" rx="5" ry="5" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
-			<text x="998" y="27" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">Client</text>
-			<line x1="952" y1="33" x2="1044" y2="33" stroke-width="1.0" stroke="#CCCCCC"/>
+			<rect x="1415" y="11" width="92" height="50" rx="5" ry="5" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
+			<text x="1461" y="29" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">Client</text>
+			<line x1="1415" y1="35" x2="1507" y2="35" stroke-width="1.0" stroke="#CCCCCC"/>
 			
 		</g>
 		<g id="_kWzN0OApEDG81PypsE2SCg">
@@ -436,8 +436,8 @@
 			
 		</g>
 		<g id="_fsVp0OApEDG81PypsE2SCg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="952,34 517,37" stroke-dasharray="10, 5"/>
-			<g transform="translate(517,37)">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="1415,36 517,38" stroke-dasharray="10, 5"/>
+			<g transform="translate(517,38)">
 				<g transform="rotate(-90)">
 					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8"/>
 					
@@ -447,7 +447,7 @@
 			
 		</g>
 		<g id="_gWrnUOApEDG81PypsE2SCg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="998,59 998,121" stroke-dasharray="10, 5"/>
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="1461,61 1462,130" stroke-dasharray="10, 5"/>
 			
 		</g>
 		<g id="_zTNiwOApEDG81PypsE2SCg">
@@ -462,9 +462,9 @@
 			
 		</g>
 		<g id="_gWrnUOApEDG81PypsE2SCg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="998,121 806,124" stroke-dasharray="10, 5"/>
-			<g transform="translate(806,124)">
-				<g transform="rotate(-91)">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="1462,130 806,127" stroke-dasharray="10, 5"/>
+			<g transform="translate(806,127)">
+				<g transform="rotate(-90)">
 					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8"/>
 					
 				</g>
@@ -747,9 +747,9 @@
 			
 		</g>
 		<g id="_lOy2gOJ-EDGchYhjl_Pzyg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="434,801 437,684" stroke-dasharray="10, 5"/>
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="437,801 437,684" stroke-dasharray="10, 5"/>
 			<g transform="translate(437,684)">
-				<g transform="rotate(1)">
+				<g transform="rotate(0)">
 					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8"/>
 					
 				</g>
@@ -870,8 +870,8 @@
 		<text x="1848" y="493" fill="#000000">*</text>
 		<text x="631" y="520" fill="#000000">iCellContents</text>
 		<text x="718" y="523" fill="#000000">*</text>
-		<text x="700" y="24" fill="#000000">« dependency »</text>
-		<text x="900" y="116" fill="#000000">« dependency »</text>
+		<text x="931" y="25" fill="#000000">« dependency »</text>
+		<text x="1364" y="122" fill="#000000">« dependency »</text>
 		<text x="559" y="259" fill="#000000">« dependency »</text>
 		
 	</g>
