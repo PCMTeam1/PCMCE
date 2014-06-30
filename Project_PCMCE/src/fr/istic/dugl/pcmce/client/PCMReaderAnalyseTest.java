@@ -10,8 +10,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
 
-
+import org.eclipse.emf.common.util.EList;
 import org.junit.Test;
+
+import pcmmm.Cell;
+import pcmmm.Matrix;
+import pcmmm.PCM;
+import pcmmm.VariabilityConcept;
+import fr.istic.dugl.pcmce.PCMReader.PCMReader;
 
 
 

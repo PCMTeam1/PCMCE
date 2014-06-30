@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.junit.Test;
 
+import fr.istic.dugl.pcmce.PCMReader.PCMReader;
 import pcmmm.Cell;
 import pcmmm.Constraint;
 import pcmmm.Feature;
