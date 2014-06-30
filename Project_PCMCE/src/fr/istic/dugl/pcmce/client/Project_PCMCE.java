@@ -77,7 +77,7 @@ public class Project_PCMCE implements EntryPoint {
 			@Override
 			public void onSuccess(List<String> result) {
 				AccueilPanel page = (AccueilPanel) Pages.LIST_NOMS.getAccueilPanel();
-				// page.init(result);
+				page.AccueilPanelInit();
 				Project_PCMCE.show(Pages.LIST_NOMS);
 			}
 		}); 
