@@ -5,11 +5,20 @@
 	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/PCM-reader/lib/model.jar"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins">
 		<attributes>
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="PCM-reader/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/gwt-servlet.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/model.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.eclipse.emf.common_2.9.2.v20131212-0545.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.eclipse.emf.common.source_2.9.2.v20131212-0545.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.eclipse.emf.ecore_2.9.2.v20131212-0545.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.eclipse.emf.ecore.change_2.9.0.v20131212-0545.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.eclipse.emf.ecore.edit_2.8.0.v20140203-1126.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.eclipse.emf.ecore.xmi_2.9.1.v20131212-0545.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.eclipse.emf.ecore.xmi.source_2.9.1.v20131212-0545.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.eclipse.emf.ecoretools_1.2.0.201306071421.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.eclipse.emf.edit_2.9.0.v20140203-1126.jar"/>
 </classpath>

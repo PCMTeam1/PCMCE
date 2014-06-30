@@ -7,5 +7,6 @@ public interface IFilterElement {
 	void setColumn( int col );
 	
 	
-	boolean isTrue( ICellContent valTest )
+	boolean isTrue( ICellContent valTest );
+	
 }
