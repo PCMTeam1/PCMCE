@@ -18,4 +18,5 @@ public interface ICellContent {
 	public boolean isEmpty();
 	public boolean isComposite();
 	public boolean isString();
+	public EnumTypeCellContent getCellContentType();
 }
