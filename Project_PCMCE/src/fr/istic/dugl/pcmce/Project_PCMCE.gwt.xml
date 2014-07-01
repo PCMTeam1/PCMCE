@@ -15,7 +15,9 @@
   <inherits name='com.google.gwt.user.theme.clean.Clean'/>
   <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
   <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
-  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     --> 
+  <!-- Other module inherits                                      -->
+  <inherits name="com.smartgwt.SmartGwt"/>
 
   <!-- Other module inherits                                      -->
 
@@ -23,9 +25,7 @@
   <entry-point class='fr.istic.dugl.pcmce.client.Project_PCMCE'/>
 
   <!-- Specify the paths for translatable code                    -->
-  <source path='fr/istic/dugl/pcmce/client'/>
-  <source path='fr/istic/dugl/pcmce/shared'/>
+  <source path='client'/>
+  <source path='shared'/>
 
-  <!-- allow Super Dev Mode -->
-  <add-linker name="xsiframe"/>
 </module>
