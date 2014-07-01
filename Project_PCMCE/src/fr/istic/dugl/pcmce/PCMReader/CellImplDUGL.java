@@ -207,26 +207,23 @@ public class CellImplDUGL implements ICell {
 	
 	@Override
 	public boolean isHeaderProduct() {
-		// TODO Auto-generated method stub
-		return false;
+		return isHeaderProduct;
 	}
 
 	@Override
 	public boolean isHeaderFeature() {
-		// TODO Auto-generated method stub
-		return false;
+		return isHeaderFeature;
 	}
 
 	@Override
 	public boolean isExtra() {
-		// TODO Auto-generated method stub
-		return false;
+		return isExtra;
 	}
 
 	@Override
 	public boolean isValued() {
 		// TODO Auto-generated method stub
-		return false;
+		return isValued;
 	}
 	
 }
