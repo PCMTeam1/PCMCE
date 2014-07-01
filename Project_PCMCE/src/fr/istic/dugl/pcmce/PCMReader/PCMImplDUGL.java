@@ -1,6 +1,8 @@
 package fr.istic.dugl.pcmce.PCMReader;
+import java.util.ArrayList;
 import java.util.List;
 
+import pcmmm.Matrix;
 import pcmmm.PCM;
 
 
@@ -12,6 +14,12 @@ public class PCMImplDUGL implements IPCM {
 	@Override
 	public void loadPCM(String fileName){
 		pcm = new PCMReader().getPCM(fileName);
+		listMatrices = new ArrayList<>();
+		
+		for(Matrix m : pcm.getMatrices()){
+			IMatrix myMatrix = new MatrixImplDUGL(m);
+			listMatrices.add(myMatrix);
+		}
 	}
 	
 	@Override

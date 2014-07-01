@@ -8,25 +8,35 @@ public interface IMatrix {
 	  
 	  public void setName( String name);
 	  
-	  public List<ICell> getCells();
+	  public int getId();
 	  
-	  public String getId();
-	  
-	  public void setId(java.lang.String id);
+	  public void setId(int id);
 
+	  public int getNbRows();
+	  
+	  public int getNbColumn();
+	  
 	  public ICell getCell(int row, int column);
 	  
 	  public int getNbHeaderProductColumn();
 	  
 	  public int getNbHeaderFeatureRows();
 	  
-	  public List<ICell> getHeaderProducts();
+	  public List<ICell> getListAllCells();
+	  public ICell[][] getTabAllCells();
+	  
+	  public List<ICell> getListValuedCells();
+	  public ICell[][] getTabValuedCells();
+	  
+	  public List<ICell> getListHeaderProductCells();
+	  public ICell[][] getTabHeaderProductCells();
 
-	  public List<ICell> getHeaderFeatures();
+	  public List<ICell> getHeaderFeatureCells();
+	  public ICell[][] getTabHeaderFeatureCells();
 	  
-	  public List<ICell> getExtras();
-	  
-	  public ICell[][] getTabCells();
+	  public List<ICell> getListExtraCells();
+	  public ICell[][] getTabExtraCells();
+
 	  
 	  
 	  

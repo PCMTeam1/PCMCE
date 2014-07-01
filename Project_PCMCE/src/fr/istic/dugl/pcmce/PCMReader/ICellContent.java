@@ -1,5 +1,6 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
+
 public interface ICellContent {
 	public enum EnumTypeCellContent{
 		INTEGER,
