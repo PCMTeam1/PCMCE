@@ -1,5 +1,9 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
+/**
+ * @author Yves Mocquard 
+ *
+ */
 public class VisitorCellContentBooleanCompare implements IVisitorCellContent {
 	
 	ICellContentBoolean b;
