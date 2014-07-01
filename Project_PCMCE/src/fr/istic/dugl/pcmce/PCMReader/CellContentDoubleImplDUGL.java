@@ -1,6 +1,6 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
-public class CellContentDoubleImplDUGL implements ICellContentDouble {
+public class CellContentDoubleImplDUGL implements ICellContentDouble, IVisitableCellContent {
 	
 	private Double value;
 	
@@ -63,5 +63,25 @@ public class CellContentDoubleImplDUGL implements ICellContentDouble {
 	public void setValue(Double value){
 		this.value=value;
 	}
+	
+	@Override
+	public int compareTo( IVisitableCellContent c ) {
+		
+		IVisitorCellContent v = new VisitorCellContentDoubleCompare( this );
+		return c.accept( v );
+	}
+
+	@Override
+	public int accept(IVisitorCellContent v) {
+		
+		return v.compareToCellContentDouble( this );
+	}
+
+	@Override
+	public ICellContent getCellContent() {
+
+		return this;
+	}
+	
 
 }

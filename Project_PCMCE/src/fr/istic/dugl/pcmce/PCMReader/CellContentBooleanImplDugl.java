@@ -1,6 +1,6 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
-public class CellContentBooleanImplDugl implements ICellContentBoolean {
+public class CellContentBooleanImplDugl implements ICellContentBoolean, IVisitableCellContent {
 
 	
 	private Boolean value;
@@ -63,6 +63,25 @@ public class CellContentBooleanImplDugl implements ICellContentBoolean {
 	public void setBoolean(Boolean value){
 		this.value=value;
 	}
+	@Override
+	public int compareTo( IVisitableCellContent c ) {
+		
+		IVisitorCellContent v = new VisitorCellContentBooleanCompare( this );
+		return c.accept( v );
+	}
+
+	@Override
+	public int accept(IVisitorCellContent v) {
+		
+		return v.compareToCellContentBoolean( this );
+	}
+
+	@Override
+	public ICellContent getCellContent() {
+
+		return this;
+	}
 	
+
 
 }

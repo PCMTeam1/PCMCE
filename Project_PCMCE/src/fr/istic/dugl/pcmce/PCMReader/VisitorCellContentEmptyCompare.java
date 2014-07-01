@@ -1,17 +1,22 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
-public class VisitorCellContentStringCompare implements IVisitorCellContent {
+/**
+ * Visitor (processing) 
+ * @author Yves Mocquard 
+ *
+ */
+public class VisitorCellContentEmptyCompare implements IVisitorCellContent {
 	
-	ICellContentString b;
+	private ICellContentEmpty b;
 	
-	VisitorCellContentStringCompare( ICellContentString b )
+	public VisitorCellContentEmptyCompare( ICellContentEmpty b )
 	{
 		this.b = b;
 	}
 
 	public int compareToCellContentString( ICellContentString a )
 	{
-		return a.getString().compareTo( b.getString() );
+		return IVisitorCellContent.inconsistentResult;
 	}
 	
 	public int compareToCellContentBoolean( ICellContentBoolean a )
@@ -35,9 +40,8 @@ public class VisitorCellContentStringCompare implements IVisitorCellContent {
 
 	@Override
 	public int compareToCellContentEmpty(ICellContentEmpty a) {
-
-		return IVisitorCellContent.inconsistentResult;
+		return 0;
 	}
-
-
 }
+
+
