@@ -1,6 +1,6 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
-public class CellContentStringImplDUGL implements ICellContentString {
+public class CellContentStringImplDUGL implements ICellContentString, IVisitableCellContent {
 	
 	private String value;
 
@@ -62,5 +62,20 @@ public class CellContentStringImplDUGL implements ICellContentString {
 	public void setString(String value){
 		this.value=value;
 	}
+
+	@Override
+	public int compareTo( IVisitableCellContent c ) {
+		
+		VisitorCellContentStringCompare v = new VisitorCellContentStringCompare( this );
+		return c.accept( v );
+	}
+
+	@Override
+	public int accept(IVisitorCellContent v) {
+		
+		return v.compareToCellContentString( this );
+	}
+	
+	
 	
 }

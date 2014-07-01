@@ -9,7 +9,22 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
 
-import sun.java2d.pipe.SpanShapeRenderer.Simple;
+import org.eclipse.emf.common.util.EList;
+import org.junit.Test;
+
+import pcmmm.Cell;
+import pcmmm.Constraint;
+import pcmmm.Feature;
+import pcmmm.Matrix;
+import pcmmm.Multiple;
+import pcmmm.PCM;
+import pcmmm.Partial;
+import pcmmm.Product;
+import pcmmm.ValuedCell;
+import pcmmm.VariabilityConcept;
+import pcmmm.Simple;
+
+import fr.istic.dugl.pcmce.PCMReader.PCMReader;
 
 
 

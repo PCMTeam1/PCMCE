@@ -75,11 +75,9 @@ public class FilterImplDUGL implements IFilter, IFilter2 {
 	 * @return -1, 0 or 1 if types are compatible.
 	 * 			else 2.
 	 */
-	public int compareCells( ICellContent valTest, ICellContent valRef )
+	public int compareCellContent( IVisitableCellContent valTest, IVisitableCellContent valRef )
 	{
-		return valTest.compareCells( valRef );
-		
-		
+		return valTest.compareTo(valRef);
 	}
 	
 	/* (non-Javadoc)
