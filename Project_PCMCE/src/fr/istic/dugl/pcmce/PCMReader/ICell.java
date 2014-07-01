@@ -34,5 +34,13 @@ public interface ICell {
 	  public ICellContent getCellContent();
 	  
 	  public void setCellContent(ICellContent iCellContent);
+	  
+	  public boolean isHeaderProduct();
+	  
+	  public boolean isHeaderFeature();
+	  
+	  public boolean isExtra();
+	  
+	  public boolean isValued();
 }
 
