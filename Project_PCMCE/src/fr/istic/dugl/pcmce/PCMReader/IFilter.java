@@ -7,9 +7,9 @@ public interface IFilter {
 
 	public abstract void setColumn(int column);
 
-	public abstract ICellContent getValue();
+	public abstract IVisitableCellContent getValue();
 
-	public abstract void setValue(ICellContent value);
+	public abstract void setValue(IVisitableCellContent value);
 
 	public abstract OperatorTest getOp();
 
@@ -26,7 +26,7 @@ public interface IFilter {
 	 * @return -1, 0 or 1 if types are compatible.
 	 * 			else 2.
 	 */
-	public abstract int compareTo(ICellContent valTest, ICellContent valRef);
+	public abstract int compareCellContent(IVisitableCellContent valTest, IVisitableCellContent valRef);
 
 	/**
 	 * test the validity of the cell, function calls from

@@ -1,7 +1,7 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
 
-public class FilterImplDUGL implements IFilter, IFilter2 {
+public class FilterImplDUGL implements IFilter {
 	public enum OperatorTest
 	{
 		EQUALS, NOT_EQUALS, LESS_THAN, GREATER_THAN, LESS_OR_EQUALS, GREATER_OR_EQUALS 
@@ -25,14 +25,14 @@ public class FilterImplDUGL implements IFilter, IFilter2 {
 	 * @see fr.istic.dugl.pcmce.PCMReader.IFilter2#getValue()
 	 */
 	@Override
-	public ICellContent getValue() {
+	public IVisitableCellContent getValue() {
 		return value;
 	}
 	/* (non-Javadoc)
 	 * @see fr.istic.dugl.pcmce.PCMReader.IFilter2#setValue(fr.istic.dugl.pcmce.PCMReader.ICellContent)
 	 */
 	@Override
-	public void setValue(ICellContent value) {
+	public void setValue(IVisitableCellContent value) {
 		this.value = value;
 	}
 	/* (non-Javadoc)
@@ -64,7 +64,7 @@ public class FilterImplDUGL implements IFilter, IFilter2 {
 		this.exact = exact;
 	}
 	private int column;
-	private ICellContent value;
+	private IVisitableCellContent value;
 	private OperatorTest op=OperatorTest.EQUALS;
 	private boolean exact=true;
 	
@@ -85,9 +85,7 @@ public class FilterImplDUGL implements IFilter, IFilter2 {
 	 */
 	@Override
 	public boolean isTrue( ICellContent valTest )
-	{
-		
-		
+	{	
 		return false; // n'importe quoi
 	}
 }

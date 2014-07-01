@@ -1,8 +1,7 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
-import sun.reflect.generics.visitor.Visitor;
 
-public interface IVisitorCellContent extends Visitor<ICellContent> {
+public interface IVisitorCellContent  {
 	
 	int compareToCellContentString( ICellContentString a );
 	int compareToCellContentBoolean( ICellContentBoolean a );
