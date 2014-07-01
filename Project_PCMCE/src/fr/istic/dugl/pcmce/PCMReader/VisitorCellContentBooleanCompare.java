@@ -1,6 +1,7 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
 /**
+ * Visitor (processing) 
  * @author Yves Mocquard 
  *
  */
