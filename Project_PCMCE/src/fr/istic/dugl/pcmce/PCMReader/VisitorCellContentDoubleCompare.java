@@ -1,42 +1,43 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
-public class VisitorCellContentStringCompare implements IVisitorCellContent {
+public class VisitorCellContentDoubleCompare implements IVisitorCellContent {
 	
-	ICellContentString b;
+	ICellContentDouble b;
 	
-	VisitorCellContentStringCompare( ICellContentString b )
+	public VisitorCellContentDoubleCompare( ICellContentDouble b )
 	{
 		this.b = b;
 	}
 
 	public int compareToCellContentString( ICellContentString a )
 	{
-		return a.getString().compareTo( b.getString() );
+		return 1;
 	}
 	
 	public int compareToCellContentBoolean( ICellContentBoolean a )
 	{
-		return IVisitorCellContent.inconsistentResult;
+		return 1;
 	}
 	public int compareToCellContentComposite( ICellContentComposite a )
 	{
-		return IVisitorCellContent.inconsistentResult;
+		return 1;
 	}
 	
 	public int compareToCellContentDouble( ICellContentDouble a )
 	{
-		return IVisitorCellContent.inconsistentResult;
+		return b.getDouble().compareTo( a.getDouble() );
 	}
 	
 	public int compareToCellContentInteger( ICellContentInteger a )
 	{
-		return IVisitorCellContent.inconsistentResult;
+		Double ad = new Double(a.getInteger());
+		return b.getDouble().compareTo( ad );
 	}
 
 	@Override
 	public int compareToCellContentEmpty(ICellContentEmpty a) {
-
-		return IVisitorCellContent.inconsistentResult;
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

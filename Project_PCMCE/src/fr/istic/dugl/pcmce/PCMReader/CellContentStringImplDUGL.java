@@ -75,7 +75,12 @@ public class CellContentStringImplDUGL implements ICellContentString, IVisitable
 		
 		return v.compareToCellContentString( this );
 	}
-	
+
+	@Override
+	public ICellContent getCellContent() {
+
+		return this;
+	}
 	
 	
 }
