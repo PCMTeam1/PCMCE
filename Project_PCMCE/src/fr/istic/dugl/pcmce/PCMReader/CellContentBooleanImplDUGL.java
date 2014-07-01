@@ -1,11 +1,11 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
-public class CellContentBooleanImplDugl implements ICellContentBoolean {
+public class CellContentBooleanImplDUGL implements ICellContentBoolean {
 
 	
 	private Boolean value;
 	
-	public CellContentBooleanImplDugl(Boolean value){
+	public CellContentBooleanImplDUGL(Boolean value){
 		this.value=value;
 	}
 	

@@ -2,10 +2,9 @@ package fr.istic.dugl.pcmce.PCMReader;
 
 import java.util.logging.Logger;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EClassImpl;
-
 import pcmmm.Cell;
+import pcmmm.Constraint;
+import pcmmm.ValuedCell;
 
 /**
  * @author 29004736
@@ -57,7 +56,7 @@ public class CellImplDUGL implements ICell {
 		this.column=cell.getColumn();
 		this.columnSpan=cell.getColspan();
 		setCellType(cell);
-		
+		this.cellContent=CreateCellContent(cell);
 		
 	}
 	
@@ -88,12 +87,35 @@ public class CellImplDUGL implements ICell {
 	 * @param cell
 	 * @return a 
 	 */
-	private ICellContent createCellContent(Cell cell){
-		ICellContent myCell;
+	public static ICellContent CreateCellContent(Cell cell){
+		ICellContent myCell = null;
+		Constraint constraint = ((ValuedCell)cell).getInterpretation();
 		
-		if(cell.eClass().getInstanceClassName().equals(HEADER_CLASS_NAME)){
-			
+		if(cell.eClass().getInstanceClassName().equals(VARIABILITY_CONCEPT_CLASS_NAME)){
+			myCell = new CellContentStringImplDUGL(((pcmmm.VariabilityConceptRef)constraint).getConcept().getName());
 		}
+		else if(cell.eClass().getInstanceClassName().equals(DOUBLE_CLASS_NAME)){
+			myCell = new CellContentDoubleImplDUGL(((pcmmm.Double)constraint).getValue());
+		}
+		else if(cell.eClass().getInstanceClassName().equals(INTEGER_CLASS_NAME)){
+			myCell = new CellContentIntegerImplDUGL(((pcmmm.Integer)constraint).getValue());
+		}
+		else if(cell.eClass().getInstanceClassName().equals(BOOLEAN_CLASS_NAME)){
+			myCell = new CellContentBooleanImplDUGL(((pcmmm.Boolean)constraint).isValue());
+		}
+		else if(cell.eClass().getInstanceClassName().equals(EMPTY_CLASS_NAME)){
+			myCell = new CellContentEmptyImplDUGL();
+		}
+		else if(cell.eClass().getInstanceClassName().equals(UNKNOWN_CLASS_NAME)){
+			myCell = new CellContentEmptyImplDUGL();
+		}
+		else if(cell.eClass().getInstanceClassName().equals(INCONSISTANT_CLASS_NAME)){
+			myCell = new CellContentEmptyImplDUGL();
+		}
+		else {
+			myCell = new CellContentStringImplDUGL(cell.getVerbatim());
+		}
+		
 		
 		return myCell;
 	}
