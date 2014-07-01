@@ -1,18 +1,19 @@
 package fr.istic.dugl.pcmce.client;
 
-import com.google.gwt.user.client.ui.VerticalPanel;
+import com.smartgwt.client.widgets.layout.HLayout;
 
 public enum Pages {
 
-	LIST_NOMS(new fr.istic.dugl.pcmce.ui.AccueilPanel());
+	ACCUEIL(new fr.istic.dugl.pcmce.ui.AccueilPanel());
+	//LIST_PCM(new fr.istic.dugl.pcmce.ui.PCMPanel());
 	
-	private VerticalPanel AccueilPanel;
+	private HLayout AccueilPanel;
 
-	private Pages(VerticalPanel Accueil) {
-		this.AccueilPanel = Accueil;
+	private Pages(HLayout AccueilPanel) {
+		this.AccueilPanel = AccueilPanel;
 	}
 	
-	public VerticalPanel getAccueilPanel() {
+	public HLayout getAccueilPanel() {
 		return AccueilPanel;
 	}
 

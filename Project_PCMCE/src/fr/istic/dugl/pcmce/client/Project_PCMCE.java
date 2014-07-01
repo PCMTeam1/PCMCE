@@ -8,6 +8,8 @@ import com.smartgwt.client.widgets.events.ClickEvent;
 import com.smartgwt.client.widgets.events.ClickHandler;
 import com.smartgwt.client.widgets.form.DynamicForm;
 import com.smartgwt.client.widgets.form.fields.TextItem;
+
+import fr.istic.dugl.pcmce.ui.AccueilPanel;
  
 
 /**
@@ -31,6 +33,11 @@ public class Project_PCMCE implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
+		
+		/*
+		AccueilPanel page = (AccueilPanel) Pages.ACCUEIL.getAccueilPanel();
+		page.AccueilPanelInit();
+		*/
 		/*
 		IButton button = new IButton("Hello World");
 		button.addClickHandler(new ClickHandler() {
@@ -98,7 +105,7 @@ public class Project_PCMCE implements EntryPoint {
 	     
 	    RootPanel.get("formContainer").add(form);
 	    RootPanel.get("buttonContainer").add(button);
-	    	         
+	             
 	
 	}
 }
