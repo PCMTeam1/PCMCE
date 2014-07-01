@@ -28,11 +28,24 @@ public class VisitorCellContentCompositeCompare implements IVisitorCellContent {
 		Iterator<ICellContent> b_it = bl.iterator();
 		Iterator<ICellContent> a_it = al.iterator();
 		
-		if ( bl.size() == al.size() )
+		int ret = 0;
+		while ( ret == 0  )
 		{
-				
+			boolean boolB = b_it.hasNext();
+			boolean boolA = a_it.hasNext();
+			if ( ! (boolA && boolB) )
+			{
+				if ( !boolA && !boolB )
+				{
+					return 0;
+				}
+				return boolA ? 1 : -1; 
+			}
+			IVisitableCellContent cellA = a_it.next().getVisitableCell();
+			IVisitableCellContent cellB = b_it.next().getVisitableCell();
+			ret = cellA.compareTo(cellB);
 		}
-		return 1;
+		return ret;
 	}
 	
 	public int compareToCellContentDouble( ICellContentDouble a )

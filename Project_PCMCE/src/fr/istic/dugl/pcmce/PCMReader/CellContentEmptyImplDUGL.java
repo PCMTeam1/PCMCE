@@ -64,6 +64,12 @@ public class CellContentEmptyImplDUGL implements ICellContentEmpty, IVisitableCe
 
 		return this;
 	}
+
+	@Override
+	public IVisitableCellContent getVisitableCell() {
+		// TODO Auto-generated method stub
+		return this;
+	}
 	
 
 }

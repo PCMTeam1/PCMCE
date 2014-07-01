@@ -22,4 +22,5 @@ public interface ICellContent {
 	public boolean isString();
 	public boolean isInconsistent();
 	public EnumTypeCellContent getCellContentType();
+	public IVisitableCellContent getVisitableCell();
 }
