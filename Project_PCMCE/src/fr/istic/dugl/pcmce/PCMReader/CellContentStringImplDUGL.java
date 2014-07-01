@@ -81,6 +81,12 @@ public class CellContentStringImplDUGL implements ICellContentString, IVisitable
 
 		return this;
 	}
+
+	@Override
+	public IVisitableCellContent getVisitableCell() {
+		// TODO Auto-generated method stub
+		return this;
+	}
 	
 	
 }

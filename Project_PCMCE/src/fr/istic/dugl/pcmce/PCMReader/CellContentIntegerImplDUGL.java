@@ -81,4 +81,10 @@ public class CellContentIntegerImplDUGL implements ICellContentInteger, IVisitab
 		return this;
 	}
 
+	@Override
+	public IVisitableCellContent getVisitableCell() {
+		// TODO Auto-generated method stub
+		return this;
+	}
+
 }
