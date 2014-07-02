@@ -39,7 +39,7 @@ public interface IMatrix {
 	  public List<ICell> getListHeaderProductCells();
 	  public ICell[][] getTabHeaderProductCells();
 
-	  public List<ICell> getHeaderFeatureCells();
+	  public List<ICell> getListHeaderFeatureCells();
 	  public ICell[][] getTabHeaderFeatureCells();
 	  
 	  public List<ICell> getListExtraCells();

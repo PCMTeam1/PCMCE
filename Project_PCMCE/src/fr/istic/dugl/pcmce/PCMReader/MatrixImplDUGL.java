@@ -129,10 +129,14 @@ public class MatrixImplDUGL implements IMatrix {
 		nbHeadersProductRows++;
 		nbHeadersFeatureColumns++;
 		
+		nbValuedRows++;
+		nbValuedColumns++;
 		
-		
-		
+	
 	}
+
+	
+	
 	@Override
 	public boolean isFirstRowHeaderFeatures(){
 		return isFirstRowHeadFeatures;
@@ -223,7 +227,7 @@ public class MatrixImplDUGL implements IMatrix {
 	}
 
 	@Override
-	public List<ICell> getHeaderFeatureCells() {
+	public List<ICell> getListHeaderFeatureCells() {
 		return this.listHeaderFeatureCells;
 	}
 
