@@ -4,7 +4,6 @@
               http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
 
-
 	<!-- Default page to serve -->
 	<welcome-file-list>
 		<welcome-file>Project_PCMCE.html</welcome-file>

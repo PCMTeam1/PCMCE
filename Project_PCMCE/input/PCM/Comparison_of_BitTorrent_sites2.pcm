@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pcmmm:PCM xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pcmmm="pcmmm">
+  <matrices name="Site comparison" id="Site comparison_0">
+    <cells xsi:type="pcmmm:Header" name="0,1: specialization" verbatim="Specialization" rowspan="1" column="1" colspan="1" concept="//@concepts.0"/>
+    <cells xsi:type="pcmmm:Header" name="0,2: is a tracker" verbatim="Is a tracker" rowspan="1" column="2" colspan="1" concept="//@concepts.1"/>
+    <cells xsi:type="pcmmm:Header" name="0,3: directory" verbatim="Directory" rowspan="1" column="3" colspan="1" concept="//@concepts.2"/>
+    <cells xsi:type="pcmmm:Header" name="0,4: public" verbatim="Public" rowspan="1" column="4" colspan="1" concept="//@concepts.3"/>
+    <cells xsi:type="pcmmm:Header" name="0,5: rss" verbatim="RSS" rowspan="1" column="5" colspan="1" concept="//@concepts.4"/>
+    <cells xsi:type="pcmmm:Header" name="0,6: one-click download" verbatim="One-click download" rowspan="1" column="6" colspan="1" concept="//@concepts.5"/>
+    <cells xsi:type="pcmmm:Header" name="0,7: sortable" verbatim="Sortable" rowspan="1" column="7" colspan="1" concept="//@concepts.6"/>
+    <cells xsi:type="pcmmm:Header" name="0,8: comments" verbatim="Comments" rowspan="1" column="8" colspan="1" concept="//@concepts.7"/>
+    <cells xsi:type="pcmmm:Header" name="0,9: multi-tracker index" verbatim="Multi-tracker index" rowspan="1" column="9" colspan="1" concept="//@concepts.8"/>
+    <cells xsi:type="pcmmm:Header" name="0,10: dht search" verbatim="DHT search" rowspan="1" column="10" colspan="1" concept="//@concepts.9"/>
+    <cells xsi:type="pcmmm:Header" name="0,11: alexa traffic rank" verbatim="Alexa Traffic Rank" rowspan="1" column="11" colspan="1" concept="//@concepts.10"/>
+    <cells xsi:type="pcmmm:Header" name="1,0: the pirate bay" verbatim="The Pirate Bay" row="1" rowspan="1" colspan="1" concept="//@concepts.11"/>
+    <cells xsi:type="pcmmm:Header" name="2,0: kickasstorrents" verbatim="KickassTorrents" row="2" rowspan="1" colspan="1" concept="//@concepts.12"/>
+    <cells xsi:type="pcmmm:Header" name="3,0: mamega.com" verbatim="Mamega.com" row="3" rowspan="1" colspan="1" concept="//@concepts.13"/>
+    <cells xsi:type="pcmmm:Header" name="4,0: torrenttree.com" verbatim="TorrentTree.com" row="4" rowspan="1" colspan="1" concept="//@concepts.14"/>
+    <cells xsi:type="pcmmm:Header" name="5,0: torrentz" verbatim="Torrentz" row="5" rowspan="1" colspan="1" concept="//@concepts.15"/>
+    <cells xsi:type="pcmmm:Header" name="6,0: torrentus" verbatim="Torrentus" row="6" rowspan="1" colspan="1" concept="//@concepts.16"/>
+    <cells xsi:type="pcmmm:Header" name="7,0: torrentsnap.com" verbatim="TorrentSnap.com" row="7" rowspan="1" colspan="1" concept="//@concepts.17"/>
+    <cells xsi:type="pcmmm:Header" name="8,0: extratorrent.com" verbatim="extratorrent.com" row="8" rowspan="1" colspan="1" concept="//@concepts.18"/>
+    <cells xsi:type="pcmmm:Header" name="9,0: nyaa.eu" verbatim="nyaa.eu" row="9" rowspan="1" colspan="1" concept="//@concepts.19"/>
+  </matrices>
+ </pcmmm:PCM>
