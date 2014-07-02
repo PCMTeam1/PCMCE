@@ -88,4 +88,8 @@ public class FilterProductImplDUGL implements IFilterProduct {
 	{	
 		return value.compareTo(valTest.getVisitableCell()) == 0;
 	}
+	@Override
+	public TypeFilter getTypeFilter() {
+		return TypeFilter.TypeFilterProduct;
+	}
 }

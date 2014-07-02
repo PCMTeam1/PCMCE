@@ -1,6 +1,6 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
-import fr.istic.dugl.pcmce.PCMReader.FilterProductImplDUGL.OperatorTest;
+import java.util.SortedSet;
 
 public interface IFilter {
 	enum TypeFilter
@@ -8,4 +8,10 @@ public interface IFilter {
 		TypeFilterProduct,
 		TypeFilterFeature
 	}
+	public TypeFilter getTypeFilter();
+	
+	/**
+	 * @return the result of the filter, a set of indices ( of product or feature )
+	 */
+	public SortedSet<Integer> getIndices();
 }

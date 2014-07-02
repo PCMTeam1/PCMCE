@@ -2,6 +2,8 @@ package fr.istic.dugl.pcmce.PCMReader;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import pcmmm.Cell;
 import pcmmm.Matrix;
@@ -58,6 +60,7 @@ public class MatrixImplDUGL implements IMatrix {
 			int column = cell.getColumn();
 			int row =  cell.getRow();
 		}
+		
 	}
 	
 	@Override
@@ -170,10 +173,49 @@ public class MatrixImplDUGL implements IMatrix {
 		return detailsOfCells;
 	}
 
-	@Override
-	public DetailsOfCells getDetailsOfCellsFromFilters(List<IFilter> listFilters) {
+	/**
+	 * @param a first set of indices ( we assume that it is sorted )
+	 * @param b second set of indices ( sorted also )
+	 * @return the set of intersection
+	 */
+	private SortedSet<Integer> intersection( SortedSet<Integer> a, SortedSet<Integer> b )
+	{
+		SortedSet<Integer> result = new TreeSet<Integer>();
+		
+		for ( Integer i:a )
+		{
+			if ( b.contains(i) )
+			{
+				result.add(i);
+			}
+		}
+		return result;
+	}
 	
-		for( IFilter )
+	public  SortedSet<Integer> getAllIndicesFeature()
+	{
+		
+	}
+	
+	
+	@Override
+	public DetailsOfCells getDetailsOfCellsFromFilters(List<IFilter> listFilters)
+	{
+		SortedSet<Integer> productIndicesSet=null;
+		SortedSet<Integer> featureIndicesSet=new TreeSet<Integer>();
+			
+		for( IFilter filter:listFilters )
+		{
+			SortedSet<Integer> resultFiltre = filter.getIndices();
+			if ( filter.getTypeFilter() == IFilter.TypeFilter.TypeFilterProduct )
+			{
+				productIndicesSet = intersection( productIndicesSet, resultFiltre );
+			}
+			else
+			{
+				featureIndicesSet = intersection( featureIndicesSet, resultFiltre );
+			}
+		}
 		
 		return null;
 	}

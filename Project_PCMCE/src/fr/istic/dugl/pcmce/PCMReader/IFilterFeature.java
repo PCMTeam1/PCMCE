@@ -10,5 +10,6 @@ public interface IFilterFeature extends IFilter  {
 	
 	public void setFeature( int ind, boolean value );
 	public BitSet getBitmap();
+	public void setBitmap( BitSet bitmap );
 
 }
