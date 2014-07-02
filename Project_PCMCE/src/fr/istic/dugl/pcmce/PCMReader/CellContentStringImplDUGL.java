@@ -1,3 +1,8 @@
+/**
+ * @author Yves Le Monnier
+ *
+ */
+
 package fr.istic.dugl.pcmce.PCMReader;
 
 public class CellContentStringImplDUGL implements ICellContentString, IVisitableCellContent {
@@ -75,7 +80,18 @@ public class CellContentStringImplDUGL implements ICellContentString, IVisitable
 		
 		return v.compareToCellContentString( this );
 	}
-	
+
+	@Override
+	public ICellContent getCellContent() {
+
+		return this;
+	}
+
+	@Override
+	public IVisitableCellContent getVisitableCell() {
+		// TODO Auto-generated method stub
+		return this;
+	}
 	
 	
 }

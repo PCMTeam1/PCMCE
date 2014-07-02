@@ -16,21 +16,27 @@ public class VisitorCellContentStringCompare implements IVisitorCellContent {
 	
 	public int compareToCellContentBoolean( ICellContentBoolean a )
 	{
-		return 1;
+		return IVisitorCellContent.inconsistentResult;
 	}
 	public int compareToCellContentComposite( ICellContentComposite a )
 	{
-		return 1;
+		return IVisitorCellContent.inconsistentResult;
 	}
 	
 	public int compareToCellContentDouble( ICellContentDouble a )
 	{
-		return 1;
+		return IVisitorCellContent.inconsistentResult;
 	}
 	
 	public int compareToCellContentInteger( ICellContentInteger a )
 	{
-		return 1;
+		return IVisitorCellContent.inconsistentResult;
+	}
+
+	@Override
+	public int compareToCellContentEmpty(ICellContentEmpty a) {
+
+		return IVisitorCellContent.inconsistentResult;
 	}
 
 

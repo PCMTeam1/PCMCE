@@ -1,6 +1,12 @@
+/**
+ * @author Yves Le Monnier
+ *
+ */
+
 package fr.istic.dugl.pcmce.PCMReader;
 
 import java.util.List;
+
 
 public interface IMatrix {
 	
@@ -8,26 +14,48 @@ public interface IMatrix {
 	  
 	  public void setName( String name);
 	  
-	  public List<ICell> getCells();
+	  public int getId();
 	  
-	  public String getId();
-	  
-	  public void setId(java.lang.String id);
+	  public void setId(int id);
 
+	  public int getNbRows();
+	  
+	  public int getNbColumn();
+	  
 	  public ICell getCell(int row, int column);
 	  
+	  public int getNbHeaderProductRow();
 	  public int getNbHeaderProductColumn();
 	  
 	  public int getNbHeaderFeatureRows();
+	  public int getNbHeaderFeatureColumn();
 	  
-	  public List<ICell> getHeaderProducts();
+	  public List<ICell> getListAllCells();
+	  public ICell[][] getTabAllCells();
+	  
+	  public List<ICell> getListValuedCells();
+	  public ICell[][] getTabValuedCells();
+	  
+	  public List<ICell> getListHeaderProductCells();
+	  public ICell[][] getTabHeaderProductCells();
 
-	  public List<ICell> getHeaderFeatures();
+	  public List<ICell> getListHeaderFeatureCells();
+	  public ICell[][] getTabHeaderFeatureCells();
 	  
-	  public List<ICell> getExtras();
+	  public List<ICell> getListExtraCells();
+	  public ICell[][] getTabExtraCells();
+
+	  public class DetailsOfCells
+	  {
+		  public List<ICell> headerFeatureCells;
+		  public List<ICell> headerProductCells; 
+		  public ICell[][] valuedCells;
+		  public List<ICell> extraCells;	  
+	  }
 	  
-	  public ICell[][] getTabCells();
+	  public DetailsOfCells getDetailsOfAllCells();
+	  public DetailsOfCells getDetailsOfCellsFromFilters( List<IFilter> listFilters );
 	  
-	  
-	  
+	  public boolean isFirstRowHeaderFeatures();
+	 
 }

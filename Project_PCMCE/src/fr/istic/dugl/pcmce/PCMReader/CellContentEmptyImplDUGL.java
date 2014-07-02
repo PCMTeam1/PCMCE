@@ -1,6 +1,11 @@
+/**
+ * @author Yves Le Monnier
+ *
+ */
+
 package fr.istic.dugl.pcmce.PCMReader;
 
-public class CellContentEmptyImplDUGL implements ICellContentEmpty {
+public class CellContentEmptyImplDUGL implements ICellContentEmpty, IVisitableCellContent {
 
 	@Override
 	public boolean isInteger() {
@@ -46,5 +51,30 @@ public class CellContentEmptyImplDUGL implements ICellContentEmpty {
 	public EnumTypeCellContent getCellContentType() {
 		return EnumTypeCellContent.EMPTY;
 	}
+	@Override
+	public int compareTo( IVisitableCellContent c ) {
+		
+		IVisitorCellContent v = new VisitorCellContentEmptyCompare( this );
+		return c.accept( v );
+	}
+
+	@Override
+	public int accept(IVisitorCellContent v) {
+		
+		return v.compareToCellContentEmpty( this );
+	}
+
+	@Override
+	public ICellContent getCellContent() {
+
+		return this;
+	}
+
+	@Override
+	public IVisitableCellContent getVisitableCell() {
+		// TODO Auto-generated method stub
+		return this;
+	}
+	
 
 }

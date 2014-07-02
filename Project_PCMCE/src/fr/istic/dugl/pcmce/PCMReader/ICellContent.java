@@ -1,4 +1,10 @@
+/**
+ * @author Yves Le Monnier
+ *
+ */
+
 package fr.istic.dugl.pcmce.PCMReader;
+
 
 public interface ICellContent {
 	public enum EnumTypeCellContent{
@@ -21,4 +27,5 @@ public interface ICellContent {
 	public boolean isString();
 	public boolean isInconsistent();
 	public EnumTypeCellContent getCellContentType();
+	public IVisitableCellContent getVisitableCell();
 }
