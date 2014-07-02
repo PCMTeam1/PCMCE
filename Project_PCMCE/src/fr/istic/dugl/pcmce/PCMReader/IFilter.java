@@ -1,41 +1,17 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
-import fr.istic.dugl.pcmce.PCMReader.FilterImplDUGL.OperatorTest;
+import java.util.SortedSet;
 
 public interface IFilter {
-	public abstract int getColumn();
-
-	public abstract void setColumn(int column);
-
-	public abstract IVisitableCellContent getValue();
-
-	public abstract void setValue(IVisitableCellContent value);
-
-	public abstract OperatorTest getOp();
-
-	public abstract void setOp(OperatorTest op);
-
-	public abstract boolean isExact();
-
-	public abstract void setExact(boolean exact);
-
+	enum TypeFilter
+	{
+		TypeFilterProduct,
+		TypeFilterFeature
+	}
+	public TypeFilter getTypeFilter();
+	
 	/**
-	 * Compare the two values of cells
-	 * @param valTest
-	 * @param valRef
-	 * @return -1, 0 or 1 if types are compatible.
-	 * 			else 2.
+	 * @return the result of the filter, a set of indices ( of product or feature )
 	 */
-	public abstract int compareCellContent(IVisitableCellContent valTest, IVisitableCellContent valRef);
-
-	/**
-	 * test the validity of the cell, function calls from
-	 * IMatrix.getResultFilter()
-	 * 
-	 * @param valTest
-	 *            : cell to test
-	 * @return
-	 */
-	public boolean isTrue(ICellContent valTest);
-
+	public SortedSet<Integer> getIndices( IMatrix matrix );
 }

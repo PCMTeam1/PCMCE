@@ -1,8 +1,13 @@
+/**
+ * @author Yves Le Monnier
+ *
+ */
+
 package fr.istic.dugl.pcmce.PCMReader;
 
 import java.util.List;
 
-public class CellContentCompositeImplDUGL implements ICellContentComposite {
+public class CellContentCompositeImplDUGL implements ICellContentComposite, IVisitableCellContent {
 	
 	private List<ICellContent> value;
 
@@ -60,5 +65,30 @@ public class CellContentCompositeImplDUGL implements ICellContentComposite {
 	public void setComposite(List<ICellContent> value){
 		this.value=value;
 	}
+	@Override
+	public int compareTo( IVisitableCellContent c ) {
+		
+		IVisitorCellContent v = new VisitorCellContentCompositeCompare( this );
+		return c.accept( v );
+	}
+
+	@Override
+	public int accept(IVisitorCellContent v) {
+		
+		return v.compareToCellContentComposite( this );
+	}
+
+	@Override
+	public ICellContent getCellContent() {
+
+		return this;
+	}
+
+	@Override
+	public IVisitableCellContent getVisitableCell() {
+		// TODO Auto-generated method stub
+		return this;
+	}
+	
 
 }

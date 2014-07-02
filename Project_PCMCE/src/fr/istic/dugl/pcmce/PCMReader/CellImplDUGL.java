@@ -1,14 +1,14 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
+import java.util.List;
 import java.util.logging.Logger;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.EClassImpl;
-
 import pcmmm.Cell;
+import pcmmm.Constraint;
+import pcmmm.ValuedCell;
 
 /**
- * @author 29004736
+ * @author Yves Le Monnier
  *
  */
 public class CellImplDUGL implements ICell {
@@ -18,23 +18,23 @@ public class CellImplDUGL implements ICell {
 	public static final String PRODUCT_CLASS_NAME = "pcmmm.Product";
 	public static final String EXTRA_CLASS_NAME = "pcmmm.Extra";
 	public static final String VALUED_CELL_CLASS_NAME = "pcmmm.ValuedCell";
-	
+
 	public static final String VARIABILITY_CONCEPT_CLASS_NAME = "pcmmm.VariabilityConceptRef";
 	public static final String DOUBLE_CLASS_NAME = "pcmmm.Double";
 	public static final String BOOLEAN_CLASS_NAME = "pcmmm.Boolean";
 	public static final String INTEGER_CLASS_NAME = "pcmmm.Integer";
-	
+
 	public static final String PARTIAL_CLASS_NAME = "pcmmm.Partial";
 	public static final String MULTIPLE_CLASS_NAME = "pcmmm.Multiple";
 	public static final String AND_CLASS_NAME = "pcmmm.And";
 	public static final String OR_CLASS_NAME = "pcmmm.Or";
 	public static final String XOR_CLASS_NAME = "pcmmm.XOr";
-	
-	
+
+
 	public static final String INCONSISTANT_CLASS_NAME = "pcmmm.Inconsistant";
 	public static final String EMPTY_CLASS_NAME = "pcmmm.Empty";
 	public static final String UNKNOWN_CLASS_NAME = "pcmmm.Unknown";
-	
+
 	private int id;
 	private String name;
 	private String verbatim;
@@ -47,8 +47,10 @@ public class CellImplDUGL implements ICell {
 	private boolean isExtra = false;
 	private boolean isValued = false;
 	private ICellContent cellContent;
-	
-	
+	private List<ICell> headersFeatures;
+	private List<ICell> headersProducts;
+
+
 	public CellImplDUGL(Cell cell){
 		this.name=cell.getName();
 		this.verbatim=cell.getVerbatim();
@@ -57,47 +59,69 @@ public class CellImplDUGL implements ICell {
 		this.column=cell.getColumn();
 		this.columnSpan=cell.getColspan();
 		setCellType(cell);
-		
-		
+		this.cellContent=CreateCellContent(cell);
+
 	}
-	
+
 	private void setCellType(Cell cell){
-		if(cell.eClass().getInstanceClassName().equals(HEADER_CLASS_NAME)){
-			String instanceClassName = ((pcmmm.Header)cell).getConcept().eClass().getInstanceClassName();
-			if(instanceClassName.equals(PRODUCT_CLASS_NAME)){
+		String instanceClassName = cell.eClass().getInstanceClassName();
+		if(instanceClassName.equals(HEADER_CLASS_NAME)){
+			String instanceHeaderClassName = ((pcmmm.Header)cell).getConcept().eClass().getInstanceClassName();
+			if(instanceHeaderClassName.equals(PRODUCT_CLASS_NAME)){
 				isHeaderProduct = true;
 			}
-			else if(instanceClassName.equals(FEATURE_CLASS_NAME)){
+			else if(instanceHeaderClassName.equals(FEATURE_CLASS_NAME)){
 				isHeaderFeature = true;
 			}
-			else if(instanceClassName.equals(EXTRA_CLASS_NAME)){
-				isExtra=true;
-			}
-			else if(instanceClassName.equals(VALUED_CELL_CLASS_NAME)){
-				isValued=true;
-			}
-			else {
-				_LOGGER.info(instanceClassName + " not supported");
-			}
 		}
+		else if(instanceClassName.equals(EXTRA_CLASS_NAME)){
+			isExtra=true;
+		}
+		else if(instanceClassName.equals(VALUED_CELL_CLASS_NAME)){
+			isValued=true;
+		}
+		else {
+			_LOGGER.info(instanceClassName + " not supported");
+		}
+
 	}
-	
-	/**
-	 * precondition : cell should be a VALUED_CELL_CLASS_NAME 
-	 * 
-	 * @param cell
-	 * @return a 
-	 */
-	private ICellContent createCellContent(Cell cell){
-		ICellContent myCell;
-		
-		if(cell.eClass().getInstanceClassName().equals(HEADER_CLASS_NAME)){
-			
+
+	public static ICellContent CreateCellContent(Cell cell){
+		ICellContent myCell = null;
+		Constraint constraint; 
+
+		if(cell.eClass().getInstanceClassName().equals(VARIABILITY_CONCEPT_CLASS_NAME)){
+			constraint = ((ValuedCell)cell).getInterpretation();
+			myCell = new CellContentStringImplDUGL(((pcmmm.VariabilityConceptRef)constraint).getConcept().getName());
 		}
-		
+		else if(cell.eClass().getInstanceClassName().equals(DOUBLE_CLASS_NAME)){
+			constraint = ((ValuedCell)cell).getInterpretation();
+			myCell = new CellContentDoubleImplDUGL(((pcmmm.Double)constraint).getValue());
+		}
+		else if(cell.eClass().getInstanceClassName().equals(INTEGER_CLASS_NAME)){
+			constraint = ((ValuedCell)cell).getInterpretation();
+			myCell = new CellContentIntegerImplDUGL(((pcmmm.Integer)constraint).getValue());
+		}
+		else if(cell.eClass().getInstanceClassName().equals(BOOLEAN_CLASS_NAME)){
+			constraint = ((ValuedCell)cell).getInterpretation();
+			myCell = new CellContentBooleanImplDUGL(((pcmmm.Boolean)constraint).isValue());
+		}
+		else if(cell.eClass().getInstanceClassName().equals(EMPTY_CLASS_NAME)){
+			myCell = new CellContentEmptyImplDUGL();
+		}
+		else if(cell.eClass().getInstanceClassName().equals(UNKNOWN_CLASS_NAME)){
+			myCell = new CellContentEmptyImplDUGL();
+		}
+		else if(cell.eClass().getInstanceClassName().equals(INCONSISTANT_CLASS_NAME)){
+			myCell = new CellContentEmptyImplDUGL();
+		}
+		else {
+			myCell = new CellContentStringImplDUGL(cell.getVerbatim());
+		}
+
 		return myCell;
 	}
-	
+
 	@Override
 	public int getId() {
 		return id;
@@ -107,7 +131,7 @@ public class CellImplDUGL implements ICell {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public int getRowSpan() {
 		return this.rowSpan;
@@ -130,7 +154,7 @@ public class CellImplDUGL implements ICell {
 	}
 
 
-	
+
 	@Override
 	public String getName() {
 		return name;
@@ -182,29 +206,25 @@ public class CellImplDUGL implements ICell {
 	public void setCellContent(ICellContent iCellContent) {
 		this.cellContent=iCellContent;
 	}
-	
+
 	@Override
 	public boolean isHeaderProduct() {
-		// TODO Auto-generated method stub
-		return false;
+		return isHeaderProduct;
 	}
 
 	@Override
 	public boolean isHeaderFeature() {
-		// TODO Auto-generated method stub
-		return false;
+		return isHeaderFeature;
 	}
 
 	@Override
 	public boolean isExtra() {
-		// TODO Auto-generated method stub
-		return false;
+		return isExtra;
 	}
 
 	@Override
 	public boolean isValued() {
-		// TODO Auto-generated method stub
-		return false;
+		return isValued;
 	}
-	
+
 }

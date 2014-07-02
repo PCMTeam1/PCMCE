@@ -1,7 +1,9 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
+import java.util.SortedSet;
 
-public class FilterImplDUGL implements IFilter {
+
+public class FilterProductImplDUGL implements IFilterProduct {
 	public enum OperatorTest
 	{
 		EQUALS, NOT_EQUALS, LESS_THAN, GREATER_THAN, LESS_OR_EQUALS, GREATER_OR_EQUALS 
@@ -86,6 +88,15 @@ public class FilterImplDUGL implements IFilter {
 	@Override
 	public boolean isTrue( ICellContent valTest )
 	{	
-		return false; // n'importe quoi
+		return value.compareTo(valTest.getVisitableCell()) == 0;
+	}
+	@Override
+	public TypeFilter getTypeFilter() {
+		return TypeFilter.TypeFilterProduct;
+	}
+	@Override
+	public SortedSet<Integer> getIndices( IMatrix matrix ) {
+		
+		return null;
 	}
 }

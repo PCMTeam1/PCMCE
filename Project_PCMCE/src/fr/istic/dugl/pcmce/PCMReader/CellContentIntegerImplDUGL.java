@@ -1,6 +1,11 @@
+/**
+ * @author Yves Le Monnier
+ *
+ */
+
 package fr.istic.dugl.pcmce.PCMReader;
 
-public class CellContentIntegerImplDUGL implements ICellContentInteger {
+public class CellContentIntegerImplDUGL implements ICellContentInteger, IVisitableCellContent {
 
 	private Integer value;
 
@@ -61,6 +66,30 @@ public class CellContentIntegerImplDUGL implements ICellContentInteger {
 	@Override
 	public void setString(Integer value){
 		this.value=value;
+	}
+
+	@Override
+	public int accept(IVisitorCellContent v) {
+		
+		return v.compareToCellContentInteger(this);
+	}
+
+	@Override
+	public int compareTo(IVisitableCellContent c) {
+		IVisitorCellContent v = new VisitorCellContentIntegerCompare(this);
+		return c.accept(v);
+	}
+
+	@Override
+	public ICellContent getCellContent() {
+	
+		return this;
+	}
+
+	@Override
+	public IVisitableCellContent getVisitableCell() {
+		// TODO Auto-generated method stub
+		return this;
 	}
 
 }
