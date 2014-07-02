@@ -6,6 +6,7 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
 import java.util.List;
+import java.util.SortedSet;
 
 
 public interface IMatrix {
@@ -52,7 +53,9 @@ public interface IMatrix {
 		  public ICell[][] valuedCells;
 		  public List<ICell> extraCells;	  
 	  }
-	  
+	  public  SortedSet<Integer> getFeatureIndices();
+	  public  SortedSet<Integer> getProductIndices();
+
 	  public DetailsOfCells getDetailsOfAllCells();
 	  public DetailsOfCells getDetailsOfCellsFromFilters( List<IFilter> listFilters );
 	  
