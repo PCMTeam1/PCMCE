@@ -227,7 +227,12 @@ public class MatrixImplDUGL implements IMatrix {
 	
 	public  SortedSet<Integer> getFeatureIndices()
 	{
-		return 
+		return featureIndices;
+	}
+	
+	public  SortedSet<Integer> getProductIndices()
+	{
+		return productIndices;
 	}
 	
 	
@@ -249,6 +254,7 @@ public class MatrixImplDUGL implements IMatrix {
 				featureIndicesSet = intersection( featureIndicesSet, resultFiltre );
 			}
 		}
+		
 		
 		return null;
 	}
