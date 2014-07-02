@@ -1,6 +1,7 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.SortedSet;
@@ -263,8 +264,74 @@ public class MatrixImplDUGL implements IMatrix {
 			}
 		}
 		
+		SortedSet<Integer> rowIndices, columnIndices;
+		List<ICell> listHeaderColumn, listHeaderRow;
+		if ( isFirstRowHeaderFeatures() )
+		{
+			listHeaderRow = listHeaderFeatureCells;
+			listHeaderColumn = listHeaderProductCells;
+			columnIndices = featureIndices;
+			rowIndices = productIndices;
+		}
+		else
+		{
+			listHeaderColumn = listHeaderFeatureCells;
+			listHeaderRow = listHeaderProductCells;
+			columnIndices = productIndices;
+			rowIndices = featureIndices;
+		}
 		
-		return null;
+		// Conversion tab to have the compact indices of the new table
+		int []tabConvRow = new int[nbAllRows];
+		int []tabConvColumn = new int[nbAllColumns];
+		Arrays.fill( tabConvRow, -1);
+		Arrays.fill( tabConvColumn, -1);
+		
+		int ind=0;
+		for ( int i:columnIndices )
+		{
+			tabConvColumn[i] = ind++;
+		}
+		ind=0;
+		for ( int i:rowIndices )
+		{
+			tabConvRow[i] = ind++;
+		}
+		
+		// Factory of the result
+		DetailsOfCells result = new DetailsOfCells();
+		List<ICell> headerColumn = filterList( listHeaderColumn, columnIndices, true );
+		List<ICell> headerRow = filterList( listHeaderRow, rowIndices, false );
+		
+		result.valuedCells = new ICell[tabConvRow.length][tabConvColumn.length];
+		for ( ICell cellule: listValuedCells )
+		{
+			int newRow = tabConvColumn[cellule.getRow()];
+			int newColumn = tabConvRow[cellule.getColumn()];
+			if ( newRow != -1 && newColumn != -1 )
+			{
+				result.valuedCells[newRow][newColumn] = cellule;
+			}
+		}
+		
+		// add the headers not the extra
+		
+		
+		
+		return result;
+	}
+	private List<ICell> filterList(List<ICell> listHeaderColumn,
+			SortedSet<Integer> columnIndices, boolean isColumn ) {
+		List<ICell> result = new LinkedList<ICell>();
+		for ( ICell cellule:listHeaderColumn )
+		{
+			if ( columnIndices.contains( isColumn ? cellule.getColumn() : cellule.getRow() ) )
+			{
+				result.add( cellule );
+			}
+		}
+		
+		return result;
 	}
 
 }
