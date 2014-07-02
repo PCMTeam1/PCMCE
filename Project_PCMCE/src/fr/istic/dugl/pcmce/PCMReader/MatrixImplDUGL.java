@@ -110,13 +110,11 @@ public class MatrixImplDUGL implements IMatrix {
 
 	@Override
 	public int getNbRows() {
-		// TODO Auto-generated method stub
-		return 0;
+		return nbAllRows;
 	}
 	@Override
 	public int getNbColumn() {
-		// TODO Auto-generated method stub
-		return 0;
+		return nbAllColumns;
 	}
 
 	@Override
