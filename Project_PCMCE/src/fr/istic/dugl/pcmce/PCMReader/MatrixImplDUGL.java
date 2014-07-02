@@ -28,6 +28,7 @@ public class MatrixImplDUGL implements IMatrix {
 	private int nbExtraRows;
 	private int nbExtraColumns;
 	
+	private boolean isFirstRowHeadFeatures;
 	
 	private List<ICell> listAllCells;
 	private ICell[][] tabAllCells;
@@ -72,7 +73,6 @@ public class MatrixImplDUGL implements IMatrix {
 		
 		tabAllCells = new ICell[nbAllRows][nbAllColumns];
 
-		
 		for(Cell cell : matrix.getCells()){
 			column = cell.getColumn();
 			row =  cell.getRow();
@@ -95,6 +95,16 @@ public class MatrixImplDUGL implements IMatrix {
 				_LOGGER.info("Type of Cell not supported");
 			}
 		}
+		for(int i=this.nbAllColumns-1; i>-1;i--){
+			if(tabAllCells[0][i].isHeaderFeature()){
+				isFirstRowHeadFeatures=true;
+			}
+		}
+		
+	}
+	@Override
+	public boolean isFirstRowHeaderFeatures(){
+		return isFirstRowHeadFeatures;
 	}
 	
 	@Override

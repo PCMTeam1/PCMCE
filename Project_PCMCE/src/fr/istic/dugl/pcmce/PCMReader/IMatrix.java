@@ -53,5 +53,7 @@ public interface IMatrix {
 	  
 	  public DetailsOfCells getDetailsOfAllCells();
 	  public DetailsOfCells getDetailsOfCellsFromFilters( List<IFilter> listFilters );
+	  
+	  public boolean isFirstRowHeaderFeatures();
 	 
 }
