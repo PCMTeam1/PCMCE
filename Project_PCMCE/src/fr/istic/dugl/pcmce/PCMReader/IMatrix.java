@@ -43,7 +43,15 @@ public interface IMatrix {
 	  public List<ICell> getListExtraCells();
 	  public ICell[][] getTabExtraCells();
 
+	  public class DetailsOfCells
+	  {
+		  public ICell[][] headerFeatureCells;
+		  public ICell[][] headerProductCells; 
+		  public ICell[][] valuedCells;
+		  public List<ICell> extraCells;	  
+	  }
 	  
-	  
-	  
+	  public DetailsOfCells getDetailsOfAllCells();
+	  public DetailsOfCells getDetailsOfCellsFromFilters( List<IFilter> listFilters );
+	 
 }

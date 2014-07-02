@@ -199,4 +199,21 @@ public class MatrixImplDUGL implements IMatrix {
 		return this.tabExtraCells;
 	}
 
+	@Override
+	public DetailsOfCells getDetailsOfAllCells() {
+		DetailsOfCells detailsOfCells = new DetailsOfCells();
+		detailsOfCells.headerFeatureCells = getTabHeaderFeatureCells();
+		detailsOfCells.headerProductCells = getTabHeaderFeatureCells();
+		detailsOfCells.extraCells = getListExtraCells();
+		return detailsOfCells;
+	}
+
+	@Override
+	public DetailsOfCells getDetailsOfCellsFromFilters(List<IFilter> listFilters) {
+	
+		for( IFilter )
+		
+		return null;
+	}
+
 }

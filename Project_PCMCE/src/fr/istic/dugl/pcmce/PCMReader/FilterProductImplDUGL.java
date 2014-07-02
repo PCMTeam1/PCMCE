@@ -1,7 +1,7 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
 
-public class FilterImplDUGL implements IFilter {
+public class FilterProductImplDUGL implements IFilterProduct {
 	public enum OperatorTest
 	{
 		EQUALS, NOT_EQUALS, LESS_THAN, GREATER_THAN, LESS_OR_EQUALS, GREATER_OR_EQUALS 
@@ -86,6 +86,6 @@ public class FilterImplDUGL implements IFilter {
 	@Override
 	public boolean isTrue( ICellContent valTest )
 	{	
-		return false; // n'importe quoi
+		return value.compareTo(valTest.getVisitableCell()) == 0;
 	}
 }
