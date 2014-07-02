@@ -296,9 +296,9 @@
 			
 		</g>
 		<g id="_KQnJ4OJfEDGchYhjl_Pzyg">
-			<rect x="1157" y="884" width="136" height="33" rx="5" ry="0" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
-			<text x="1225" y="902" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">ValuedCellImplDUGL</text>
-			<line x1="1157" y1="908" x2="1293" y2="908" stroke-width="1.0" stroke="#CCCCCC"/>
+			<rect x="1152" y="732" width="136" height="33" rx="5" ry="0" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
+			<text x="1220" y="750" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">CellImplDUGL</text>
+			<line x1="1152" y1="756" x2="1288" y2="756" stroke-width="1.0" stroke="#CCCCCC"/>
 			
 		</g>
 		<g id="_vKaPQOJ3EDGchYhjl_Pzyg">
@@ -422,52 +422,6 @@
 			<text x="116" y="1112" font-size="12" text-anchor="middle" font-style="normal" font-weight="bold" fill="#696969">« Interface »</text>
 			<text x="116" y="1130" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">ICellContentCompositeXor</text>
 			<line x1="31" y1="1136" x2="200" y2="1136" stroke-width="1.0" stroke="#CCCCCC"/>
-			
-		</g>
-		<g id="_3cCBAOKUEDGchYhjl_Pzyg">
-			<rect x="938" y="687" width="129" height="49" rx="5" ry="0" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
-			<text x="1003" y="705" font-size="12" text-anchor="middle" font-style="normal" font-weight="bold" fill="#696969">« Interface »</text>
-			<text x="1003" y="723" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">IHeaderProductCell</text>
-			<line x1="938" y1="729" x2="1067" y2="729" stroke-width="1.0" stroke="#CCCCCC"/>
-			
-		</g>
-		<g id="_6cNNcOKUEDGchYhjl_Pzyg">
-			<rect x="1365" y="688" width="129" height="49" rx="5" ry="0" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
-			<text x="1430" y="706" font-size="12" text-anchor="middle" font-style="normal" font-weight="bold" fill="#696969">« Interface »</text>
-			<text x="1430" y="724" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">IHeaderFeatureCell</text>
-			<line x1="1365" y1="730" x2="1494" y2="730" stroke-width="1.0" stroke="#CCCCCC"/>
-			
-		</g>
-		<g id="_98FNoOKUEDGchYhjl_Pzyg">
-			<rect x="1180" y="797" width="89" height="47" rx="5" ry="0" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
-			<text x="1225" y="815" font-size="12" text-anchor="middle" font-style="normal" font-weight="bold" fill="#696969">« Interface »</text>
-			<text x="1225" y="833" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">IValuedCell</text>
-			<line x1="1180" y1="839" x2="1269" y2="839" stroke-width="1.0" stroke="#CCCCCC"/>
-			
-		</g>
-		<g id="_KXGj4OKVEDGchYhjl_Pzyg">
-			<rect x="1571" y="684" width="89" height="47" rx="5" ry="0" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
-			<text x="1616" y="702" font-size="12" text-anchor="middle" font-style="normal" font-weight="bold" fill="#696969">« Interface »</text>
-			<text x="1616" y="720" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">IExtraCell</text>
-			<line x1="1571" y1="726" x2="1660" y2="726" stroke-width="1.0" stroke="#CCCCCC"/>
-			
-		</g>
-		<g id="_Crh7EONgEDGxdp7sNVx5Vg">
-			<rect x="1335" y="775" width="185" height="31" rx="5" ry="0" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
-			<text x="1428" y="793" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">HeaderProductCellImplDUGL</text>
-			<line x1="1335" y1="799" x2="1520" y2="799" stroke-width="1.0" stroke="#CCCCCC"/>
-			
-		</g>
-		<g id="_HgXjEONgEDGxdp7sNVx5Vg">
-			<rect x="909" y="768" width="185" height="31" rx="5" ry="0" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
-			<text x="1002" y="786" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">HeaderFeatureCellImplDUGL</text>
-			<line x1="909" y1="792" x2="1094" y2="792" stroke-width="1.0" stroke="#CCCCCC"/>
-			
-		</g>
-		<g id="_K0_VgONgEDGxdp7sNVx5Vg">
-			<rect x="1554" y="778" width="128" height="31" rx="5" ry="0" fill="url(#greyGradient)" stroke="#CCCCCC" stroke-width="1"/>
-			<text x="1618" y="796" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">ExtraCellImplDUGL</text>
-			<line x1="1554" y1="802" x2="1682" y2="802" stroke-width="1.0" stroke="#CCCCCC"/>
 			
 		</g>
 		<g id="_mYT0QOPnEDGu54qEAmLDGA">
@@ -1027,148 +981,6 @@
 			</g>
 			
 		</g>
-		<g id="_1Cq4sONfEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1180,821 857,819"/>
-			<g transform="translate(1180,821)">
-				<g transform="rotate(90)">
-					<polygon fill="#000000" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8 0, 16"/>
-					
-				</g>
-				
-			</g>
-			<g transform="translate(857,819)">
-				<g transform="rotate(-90)">
-					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
-		<g id="_4wYgkONfEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1225,797 1224,520"/>
-			<g transform="translate(1224,520)">
-				<g transform="rotate(0)">
-					<polygon fill="#FFFFFF" stroke-width="1" stroke="#000000" points="-6,10 0,0 6,10 -6,10"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
-		<g id="_8H_VkONfEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1018,687 1122,520"/>
-			<g transform="translate(1122,520)">
-				<g transform="rotate(32)">
-					<polygon fill="#FFFFFF" stroke-width="1" stroke="#000000" points="-6,10 0,0 6,10 -6,10"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
-		<g id="_8kvjAONfEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1416,688 1319,520"/>
-			<g transform="translate(1319,520)">
-				<g transform="rotate(-30)">
-					<polygon fill="#FFFFFF" stroke-width="1" stroke="#000000" points="-6,10 0,0 6,10 -6,10"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
-		<g id="_-iBvEONfEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1589,684 1337,457"/>
-			<g transform="translate(1337,457)">
-				<g transform="rotate(-48)">
-					<polygon fill="#FFFFFF" stroke-width="1" stroke="#000000" points="-6,10 0,0 6,10 -6,10"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
-		<g id="_sciT4ONgEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1180,799 1054,737"/>
-			<g transform="translate(1180,799)">
-				<g transform="rotate(116)">
-					<polygon fill="#000000" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8 0, 16"/>
-					
-				</g>
-				
-			</g>
-			<g transform="translate(1054,737)">
-				<g transform="rotate(-64)">
-					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
-		<g id="_tBTN0eNgEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1270,797 1383,738"/>
-			<g transform="translate(1270,797)">
-				<g transform="rotate(-118)">
-					<polygon fill="#000000" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8 0, 16"/>
-					
-				</g>
-				
-			</g>
-			<g transform="translate(1383,738)">
-				<g transform="rotate(62)">
-					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
-		<g id="_VT3SsONhEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1002,768 1003,737" stroke-dasharray="10, 5"/>
-			<g transform="translate(1003,737)">
-				<g transform="rotate(2)">
-					<polyline fill="#FFFFFF" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
-		<g id="_V8mtsONhEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1428,775 1429,738" stroke-dasharray="10, 5"/>
-			<g transform="translate(1429,738)">
-				<g transform="rotate(2)">
-					<polyline fill="#FFFFFF" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
-		<g id="_WbMHIONhEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1225,884 1225,845" stroke-dasharray="10, 5"/>
-			<g transform="translate(1225,845)">
-				<g transform="rotate(0)">
-					<polyline fill="#FFFFFF" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
-		<g id="_XPsGMONhEDGxdp7sNVx5Vg">
-			<polyline fill="none" stroke-width="1" stroke="#000000" points="1618,778 1617,732" stroke-dasharray="10, 5"/>
-			<g transform="translate(1617,732)">
-				<g transform="rotate(-1)">
-					<polyline fill="#FFFFFF" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12"/>
-					
-				</g>
-				
-			</g>
-			
-		</g>
 		<g id="_3ju-cOPnEDGu54qEAmLDGA">
 			<polyline fill="none" stroke-width="1" stroke="#000000" points="775,713 777,619"/>
 			<g transform="translate(777,619)">
@@ -1301,24 +1113,49 @@
 			</g>
 			
 		</g>
+		<g id="_fcJG0OP8EDGfGNTPYtVozA">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="1111,471 857,731"/>
+			<g transform="translate(1111,471)">
+				<g transform="rotate(44)">
+					<polygon fill="#000000" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8 0, 16"/>
+					
+				</g>
+				
+			</g>
+			<g transform="translate(857,731)">
+				<g transform="rotate(-136)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-4,8 0,0 4,8"/>
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_iNDvQOP8EDGfGNTPYtVozA">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="1220,732 1222,520" stroke-dasharray="10, 5"/>
+			<g transform="translate(1222,520)">
+				<g transform="rotate(1)">
+					<polyline fill="#FFFFFF" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12"/>
+					
+				</g>
+				
+			</g>
+			
+		</g>
 		<text x="1370" y="358" fill="#000000">headerFeatureCells</text>
 		<text x="1342" y="357" fill="#000000">*</text>
 		<text x="1369" y="310" fill="#000000">headerProductCells</text>
 		<text x="1342" y="309" fill="#000000">*</text>
-		<text x="1343" y="255" fill="#000000">extraCells</text>
+		<text x="1344" y="255" fill="#000000">extraCells</text>
 		<text x="1335" y="274" fill="#000000">*</text>
-		<text x="1378" y="392" fill="#000000">valuedCells</text>
+		<text x="1377" y="392" fill="#000000">valuedCells</text>
 		<text x="1355" y="393" fill="#000000">*</text>
 		<text x="1831" y="339" fill="#000000">iMatrixList</text>
 		<text x="1828" y="305" fill="#000000">*</text>
 		<text x="571" y="803" fill="#000000">iCellContents</text>
 		<text x="657" y="806" fill="#000000">*</text>
-		<text x="867" y="837" fill="#000000">iCellContent</text>
-		<text x="864" y="806" fill="#000000">1</text>
-		<text x="1080" y="727" fill="#000000">iHeaderProductCells</text>
-		<text x="1077" y="745" fill="#000000">1..*</text>
-		<text x="1240" y="728" fill="#000000">iHeaderFeatureCells</text>
-		<text x="1334" y="745" fill="#000000">1..*</text>
+		<text x="875" y="715" fill="#000000">iCellContent</text>
+		<text x="864" y="709" fill="#000000">1</text>
 		<text x="2297" y="399" fill="#000000">« dependency »</text>
 		<text x="2049" y="547" fill="#000000">« dependency »</text>
 		<text x="2197" y="308" fill="#000000">« dependency »</text>
