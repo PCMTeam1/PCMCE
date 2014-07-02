@@ -2,8 +2,8 @@ package fr.istic.dugl.pcmce.client;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-
 import com.google.gwt.user.client.ui.TextArea;
+import fr.istic.dugl.pcmce.client.DetailPCMCtrl;
 
 public class MyClick implements ClickHandler {
 
@@ -16,9 +16,9 @@ public class MyClick implements ClickHandler {
 
 	@Override
 	public void onClick(ClickEvent event) {
-
-		if (myTextArea.getName().equals("OnePCM")){
-			Project_PCMCE.generateDETAIL_PCM(myTextArea.getValue());
-		}
+		
+		
+		
+		DetailPCMCtrl.generateDETAIL_PCM(myTextArea.getValue());
 	}
 }

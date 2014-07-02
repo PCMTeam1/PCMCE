@@ -11,7 +11,7 @@ import fr.istic.dugl.pcmce.client.SuccesService;
 public class SuccesServiceImpl extends RemoteServiceServlet implements SuccesService {
 
 	public String getPCMFile() {
-		String str="test";
+		String str="testServer";
 		return str;
 	};
 

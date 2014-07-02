@@ -12,12 +12,12 @@
 
 	<!-- Servlets -->
 	<servlet>
-		<servlet-name>succes</servlet-name>
+		<servlet-name>SuccesService</servlet-name>
 		<servlet-class>fr.istic.dugl.pcmce.server.SuccesServiceImpl</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>succes</servlet-name>
+		<servlet-name>SuccesService</servlet-name>
 		<url-pattern>/project_pcmce/succes</url-pattern>
 	</servlet-mapping>
 </web-app>
