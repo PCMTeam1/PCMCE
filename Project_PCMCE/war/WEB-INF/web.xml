@@ -1,23 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
               http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <servlet>
+    <servlet-name>GreetingServiceImpl</servlet-name>
+    <servlet-class>fr.istic.dugl.pcmce.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GreetingServiceImpl</servlet-name>
+    <url-pattern>/project_pcmce/greet</url-pattern>
+  </servlet-mapping>
 
 
-	<!-- Default page to serve -->
-	<welcome-file-list>
-		<welcome-file>Project_PCMCE.html</welcome-file>
-	</welcome-file-list>
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Project_PCMCE.html</welcome-file>
+  </welcome-file-list>
 
-	<!-- Servlets -->
+  <!-- Servlets
+
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>fr.istic.dugl.pcmce.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/project_pcmce/greet</url-pattern>
+  </servlet-mapping>
+
+    -->
+  <!-- Servlets
 	<servlet>
-		<servlet-name>succes</servlet-name>
-		<servlet-class>fr.istic.dugl.pcmce.server.SuccesServiceImpl</servlet-class>
+		<servlet-name>serial</servlet-name>
+		<servlet-class>fr.istic.dugl.pcmce.server.SuccesServerImpl</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>succes</servlet-name>
-		<url-pattern>/project_pcmce/succes</url-pattern>
+		<servlet-name>serial</servlet-name>
+		<url-pattern>/project_pcmce/lesSucces</url-pattern>
 	</servlet-mapping>
+ 
+    -->
+
+
 </web-app>
