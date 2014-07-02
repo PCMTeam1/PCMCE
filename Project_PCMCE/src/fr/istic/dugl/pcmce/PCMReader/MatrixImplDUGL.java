@@ -71,8 +71,7 @@ public class MatrixImplDUGL implements IMatrix {
 		nbAllRows++; nbAllColumns++;
 		
 		tabAllCells = new ICell[nbAllRows][nbAllColumns];
-		
-		int numRowHeaderFeature,numColumntHeaderFeature,numRowHeaderProduct,numColumnHeaderProduct;
+
 		
 		for(Cell cell : matrix.getCells()){
 			column = cell.getColumn();
