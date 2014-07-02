@@ -33,7 +33,7 @@ public class TestPCMImplDUGL {
 			matrixContent+= header.getVerbatim()+ "\t";
 		}
 		matrixContent+="</p>";
-		
+		matrixContent+="<p>"+ myMatrix.isFirstRowHeaderFeatures() +"<p>";
 		
 		
 		
