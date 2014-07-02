@@ -47,8 +47,8 @@ public interface IMatrix {
 
 	  public class DetailsOfCells
 	  {
-		  public ICell[][] headerFeatureCells;
-		  public ICell[][] headerProductCells; 
+		  public List<ICell> headerFeatureCells;
+		  public List<ICell> headerProductCells; 
 		  public ICell[][] valuedCells;
 		  public List<ICell> extraCells;	  
 	  }

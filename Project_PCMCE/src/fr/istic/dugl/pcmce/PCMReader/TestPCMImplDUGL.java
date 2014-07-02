@@ -23,7 +23,7 @@ public class TestPCMImplDUGL {
 
 		String matrixContent="";
 		matrixContent+="<p><b>Features List : </b>";
-		for(ICell header  : myMatrix.getHeaderFeatureCells()){
+		for(ICell header  : myMatrix.getListHeaderFeatureCells()){
 			matrixContent+= header.getVerbatim()+ "\t";
 		}
 		matrixContent+="</p><p>";
