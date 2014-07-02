@@ -4,9 +4,9 @@ import fr.istic.dugl.pcmce.PCMReader.FilterProductImplDUGL.OperatorTest;
 
 public interface IFilterProduct extends IFilter {
 	
-	public abstract int getColumn();
+	public abstract int getIndFeature();
 
-	public abstract void setColumn(int column);
+	public abstract void setIndFeature(int column);
 
 	public abstract IVisitableCellContent getValue();
 
