@@ -1,6 +1,7 @@
 package fr.istic.dugl.pcmce.PCMReader;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.SortedSet;
@@ -11,54 +12,51 @@ import pcmmm.Cell;
 import pcmmm.Matrix;
 
 public class MatrixImplDUGL implements IMatrix {
-	
+
 	public static Logger _LOGGER = Logger.getLogger("MatrixImplDUGL");
 	private int id;
 	private String name;
-	
+
 	private int nbAllRows;
 	private int nbAllColumns;
-	
+
 	private int nbHeadersProductRows;
 	private int nbHeadersProductColumns;
-	
+
 	private int nbHeadersFeatureRows;
 	private int nbHeadersFeatureColumns;
-	
-	private int nbExtraRows;
-	private int nbExtraColumns;
-	
-	
+
+	private int nbValuedRows;
+	private int nbValuedColumns;
+
+	private boolean isFirstRowHeadFeatures;
+
 	private List<ICell> listAllCells;
 	private ICell[][] tabAllCells;
-	
+
 	private List<ICell> listValuedCells;
 	private ICell[][] tabValuedCells;
-	
+
 	private List<ICell> listHeaderProductCells;
 	private ICell[][] tabHeaderProductCells;
-	
+
 	private List<ICell> listHeaderFeatureCells;
 	private ICell[][] tabHeaderFeatureCells;
-	
+
 	private List<ICell> listExtraCells;
 	private ICell[][] tabExtraCells;
-	
+
 	private SortedSet<Integer> featureIndices;
 	private SortedSet<Integer> productIndices;
-	
+
 	public MatrixImplDUGL(Matrix matrix){
 		listAllCells = new ArrayList<ICell>();
-		
 		listValuedCells = new ArrayList<ICell>();
-		
 		listHeaderProductCells = new ArrayList<ICell>();
-		
 		listHeaderFeatureCells = new ArrayList<ICell>();
-		
 		listExtraCells = new ArrayList<ICell>();
-		
-		//Compute number of rows and numbers of columns
+
+		//Compute number of rows and number of columns
 		int column,row;
 		nbAllRows = 0;
 		nbAllColumns = 0;
@@ -69,34 +67,82 @@ public class MatrixImplDUGL implements IMatrix {
 			if(column>nbAllColumns) {nbAllColumns=column;}
 		}
 		nbAllRows++; nbAllColumns++;
-		
-		tabAllCells = new ICell[nbAllRows][nbAllColumns];
 
+		tabAllCells = new ICell[nbAllRows][nbAllColumns];
+		nbHeadersFeatureRows=-1;
+		nbHeadersFeatureColumns=-1;
+		nbHeadersProductColumns=-1;
+		nbHeadersProductRows=-1;
+		nbValuedRows=-1;
+		nbValuedColumns=-1;
 		
+		isFirstRowHeadFeatures = false;
+		//
 		for(Cell cell : matrix.getCells()){
 			column = cell.getColumn();
 			row =  cell.getRow();
+			
 			ICell myCellImplDUGL = new CellImplDUGL(cell);
+			
 			listAllCells.add(myCellImplDUGL);
 			tabAllCells[row][column] = myCellImplDUGL;
+			
 			if(myCellImplDUGL.isHeaderFeature()){
 				listHeaderFeatureCells.add(myCellImplDUGL);
+				if(row==0){
+					isFirstRowHeadFeatures=true;
+				}
+				if(row>nbHeadersFeatureRows){
+					nbHeadersFeatureRows=row;
+				}
+				if(column>nbHeadersFeatureColumns){
+					nbHeadersFeatureColumns=column;
+				}
 			}
 			else if(myCellImplDUGL.isHeaderProduct()){
 				listHeaderProductCells.add(myCellImplDUGL);
+				if(row>nbHeadersProductRows){
+					nbHeadersProductRows=row;
+				}
+				if(column>nbHeadersProductColumns){
+					nbHeadersProductColumns=column;
+				}
 			}
 			else if(myCellImplDUGL.isExtra()){
 				listExtraCells.add(myCellImplDUGL);
 			}
 			else if(myCellImplDUGL.isValued()){
 				listValuedCells.add(myCellImplDUGL);
+				if(row>nbValuedRows){
+					nbValuedRows=row;
+				}
+				if(column>nbValuedColumns){
+					nbValuedColumns=column;
+				}
 			}
 			else{
 				_LOGGER.info("Type of Cell not supported");
 			}
 		}
-	}
+		nbHeadersFeatureRows++;
+		nbHeadersProductColumns++;
+		
+		nbHeadersProductRows++;
+		nbHeadersFeatureColumns++;
+		
+		nbValuedRows++;
+		nbValuedColumns++;
+		
 	
+	}
+
+	
+	
+	@Override
+	public boolean isFirstRowHeaderFeatures(){
+		return isFirstRowHeadFeatures;
+	}
+
 	@Override
 	public String getName() {
 		return this.name;
@@ -106,7 +152,7 @@ public class MatrixImplDUGL implements IMatrix {
 	public void setName(String name) {
 		this.name=name;
 	}
-	
+
 
 	@Override
 	public int getNbRows() {
@@ -125,7 +171,7 @@ public class MatrixImplDUGL implements IMatrix {
 	@Override
 	public void setId(int id) {
 		this.id=id;
-		
+
 	}
 
 	@Override
@@ -135,16 +181,22 @@ public class MatrixImplDUGL implements IMatrix {
 
 	@Override
 	public int getNbHeaderProductColumn() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.nbHeadersProductColumns;
 	}
 
 	@Override
 	public int getNbHeaderFeatureRows() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.nbHeadersFeatureRows;
 	}
 
+	@Override
+	public int getNbHeaderProductRow() {
+		return nbHeadersProductRows;
+	}
+	@Override
+	public int getNbHeaderFeatureColumn() {
+		return nbHeadersFeatureColumns;
+	}
 	@Override
 	public List<ICell> getListAllCells() {
 		return this.listAllCells;
@@ -176,7 +228,7 @@ public class MatrixImplDUGL implements IMatrix {
 	}
 
 	@Override
-	public List<ICell> getHeaderFeatureCells() {
+	public List<ICell> getListHeaderFeatureCells() {
 		return this.listHeaderFeatureCells;
 	}
 
@@ -198,8 +250,8 @@ public class MatrixImplDUGL implements IMatrix {
 	@Override
 	public DetailsOfCells getDetailsOfAllCells() {
 		DetailsOfCells detailsOfCells = new DetailsOfCells();
-		detailsOfCells.headerFeatureCells = getTabHeaderFeatureCells();
-		detailsOfCells.headerProductCells = getTabHeaderFeatureCells();
+		detailsOfCells.headerFeatureCells = getListHeaderFeatureCells();
+		detailsOfCells.headerProductCells = getListHeaderFeatureCells();
 		detailsOfCells.extraCells = getListExtraCells();
 		return detailsOfCells;
 	}
@@ -212,7 +264,7 @@ public class MatrixImplDUGL implements IMatrix {
 	private SortedSet<Integer> intersection( SortedSet<Integer> a, SortedSet<Integer> b )
 	{
 		SortedSet<Integer> result = new TreeSet<Integer>();
-		
+
 		for ( Integer i:a )
 		{
 			if ( b.contains(i) )
@@ -222,24 +274,24 @@ public class MatrixImplDUGL implements IMatrix {
 		}
 		return result;
 	}
-	
+
 	public  SortedSet<Integer> getFeatureIndices()
 	{
 		return featureIndices;
 	}
-	
+
 	public  SortedSet<Integer> getProductIndices()
 	{
 		return productIndices;
 	}
-	
-	
+
+
 	@Override
 	public DetailsOfCells getDetailsOfCellsFromFilters(List<IFilter> listFilters)
 	{
 		SortedSet<Integer> productIndicesSet=null;
 		SortedSet<Integer> featureIndicesSet=new TreeSet<Integer>();
-			
+
 		for( IFilter filter:listFilters )
 		{
 			SortedSet<Integer> resultFiltre = filter.getIndices(this);
@@ -252,9 +304,84 @@ public class MatrixImplDUGL implements IMatrix {
 				featureIndicesSet = intersection( featureIndicesSet, resultFiltre );
 			}
 		}
+		// Factory of the result
 		
+		SortedSet<Integer> rowIndices, columnIndices;
+		List<ICell> listHeaderColumn, listHeaderRow;
+		List<ICell> headerColumn,headerRow;
+		if ( isFirstRowHeaderFeatures() )
+		{
+			listHeaderRow = listHeaderFeatureCells;
+			listHeaderColumn = listHeaderProductCells;
+			columnIndices = featureIndices;
+			rowIndices = productIndices;
+		}
+		else
+		{
+			listHeaderColumn = listHeaderFeatureCells;
+			listHeaderRow = listHeaderProductCells;
+			columnIndices = productIndices;
+			rowIndices = featureIndices;
+		}
 		
-		return null;
+		// Conversion tab to have the compact indices of the new table
+		int []tabConvRow = new int[nbAllRows];
+		int []tabConvColumn = new int[nbAllColumns];
+		Arrays.fill( tabConvRow, -1);
+		Arrays.fill( tabConvColumn, -1);
+		
+		int ind=0;
+		for ( int i:columnIndices )
+		{
+			tabConvColumn[i] = ind++;
+		}
+		ind=0;
+		for ( int i:rowIndices )
+		{
+			tabConvRow[i] = ind++;
+		}
+		
+		headerColumn = filterList( listHeaderColumn, columnIndices, true );
+		headerRow = filterList( listHeaderRow, rowIndices, false );
+
+		DetailsOfCells result = new DetailsOfCells();
+
+		result.valuedCells = new ICell[tabConvRow.length][tabConvColumn.length];
+		for ( ICell cellule: listValuedCells )
+		{
+			int newRow = tabConvColumn[cellule.getRow()];
+			int newColumn = tabConvRow[cellule.getColumn()];
+			if ( newRow != -1 && newColumn != -1 )
+			{
+				result.valuedCells[newRow][newColumn] = cellule;
+			}
+		}
+		
+		if ( isFirstRowHeaderFeatures() )
+		{
+			result.headerFeatureCells = headerColumn;
+			result.headerProductCells = headerRow;
+		}
+		else
+		{
+			result.headerFeatureCells = headerRow;
+			result.headerProductCells = headerColumn;
+		}
+
+		return result;
+	}
+	private List<ICell> filterList(List<ICell> listHeaderColumn,
+			SortedSet<Integer> columnIndices, boolean isColumn ) {
+		List<ICell> result = new LinkedList<ICell>();
+		for ( ICell cellule:listHeaderColumn )
+		{
+			if ( columnIndices.contains( isColumn ? cellule.getColumn() : cellule.getRow() ) )
+			{
+				result.add( cellule );
+			}
+		}
+		
+		return result;
 	}
 
 }

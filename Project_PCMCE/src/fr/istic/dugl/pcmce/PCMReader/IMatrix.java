@@ -24,9 +24,11 @@ public interface IMatrix {
 	  
 	  public ICell getCell(int row, int column);
 	  
+	  public int getNbHeaderProductRow();
 	  public int getNbHeaderProductColumn();
 	  
 	  public int getNbHeaderFeatureRows();
+	  public int getNbHeaderFeatureColumn();
 	  
 	  public List<ICell> getListAllCells();
 	  public ICell[][] getTabAllCells();
@@ -37,7 +39,7 @@ public interface IMatrix {
 	  public List<ICell> getListHeaderProductCells();
 	  public ICell[][] getTabHeaderProductCells();
 
-	  public List<ICell> getHeaderFeatureCells();
+	  public List<ICell> getListHeaderFeatureCells();
 	  public ICell[][] getTabHeaderFeatureCells();
 	  
 	  public List<ICell> getListExtraCells();
@@ -45,13 +47,15 @@ public interface IMatrix {
 
 	  public class DetailsOfCells
 	  {
-		  public ICell[][] headerFeatureCells;
-		  public ICell[][] headerProductCells; 
+		  public List<ICell> headerFeatureCells;
+		  public List<ICell> headerProductCells; 
 		  public ICell[][] valuedCells;
 		  public List<ICell> extraCells;	  
 	  }
 	  
 	  public DetailsOfCells getDetailsOfAllCells();
 	  public DetailsOfCells getDetailsOfCellsFromFilters( List<IFilter> listFilters );
+	  
+	  public boolean isFirstRowHeaderFeatures();
 	 
 }
