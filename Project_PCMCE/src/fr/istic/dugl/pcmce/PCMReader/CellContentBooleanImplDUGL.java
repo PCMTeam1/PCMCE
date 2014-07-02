@@ -1,5 +1,8 @@
 package fr.istic.dugl.pcmce.PCMReader;
-
+/**
+ * @author Yves Le Monnier
+ *
+ */
 public class CellContentBooleanImplDUGL implements ICellContentBoolean, IVisitableCellContent {
 
 	

@@ -1,3 +1,8 @@
+/**
+ * @author Yves Le Monnier
+ *
+ */
+
 package fr.istic.dugl.pcmce.PCMReader;
 import java.io.BufferedWriter;
 import java.io.File;
