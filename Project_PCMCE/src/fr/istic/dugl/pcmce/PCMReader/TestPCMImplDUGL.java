@@ -52,7 +52,7 @@ public class TestPCMImplDUGL {
 		//_LOGGER.info(matrixContent);
 
 		try{
-			PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("Comparison_of_feed_aggregators.pcm-test.html")));
+			PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("others/Comparison_of_feed_aggregators.pcm-testImpl.html")));
 
 			out.write(matrixContent);
 			out.close();
