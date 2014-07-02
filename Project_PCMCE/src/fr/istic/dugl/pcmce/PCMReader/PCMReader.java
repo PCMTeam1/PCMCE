@@ -11,11 +11,8 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import pcmmm.PCM;
 import pcmmm.PcmmmPackage;
 
-
-
 /**
- * A class to read a .pcm file
- * @author macher1
+ * @author Yves Le Monnier
  *
  */
 public class PCMReader {

@@ -1,6 +1,8 @@
 package fr.istic.dugl.pcmce.PCMReader;
-
-
+/**
+ * @author Yves Le Monnier
+ *
+ */
 public interface ICell {
 	
 	  public int getId();

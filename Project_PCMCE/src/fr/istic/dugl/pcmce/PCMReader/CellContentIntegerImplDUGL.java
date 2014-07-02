@@ -1,3 +1,8 @@
+/**
+ * @author Yves Le Monnier
+ *
+ */
+
 package fr.istic.dugl.pcmce.PCMReader;
 
 public class CellContentIntegerImplDUGL implements ICellContentInteger, IVisitableCellContent {

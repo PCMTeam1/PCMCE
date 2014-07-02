@@ -13,5 +13,5 @@ public interface IFilter {
 	/**
 	 * @return the result of the filter, a set of indices ( of product or feature )
 	 */
-	public SortedSet<Integer> getIndices();
+	public SortedSet<Integer> getIndices( IMatrix matrix );
 }
