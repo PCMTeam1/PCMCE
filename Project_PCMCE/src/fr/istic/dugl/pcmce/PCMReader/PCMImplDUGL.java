@@ -45,8 +45,7 @@ public class PCMImplDUGL implements IPCM {
 
 	@Override
 	public List<IMatrix> getMatrices() {
-		// TODO Auto-generated method stub
-		return null;
+		return listMatrices;
 	}
 
 	@Override

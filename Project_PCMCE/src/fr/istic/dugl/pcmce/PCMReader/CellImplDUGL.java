@@ -88,18 +88,22 @@ public class CellImplDUGL implements ICell {
 
 	public static ICellContent CreateCellContent(Cell cell){
 		ICellContent myCell = null;
-		Constraint constraint = ((ValuedCell)cell).getInterpretation();
+		Constraint constraint; 
 
 		if(cell.eClass().getInstanceClassName().equals(VARIABILITY_CONCEPT_CLASS_NAME)){
+			constraint = ((ValuedCell)cell).getInterpretation();
 			myCell = new CellContentStringImplDUGL(((pcmmm.VariabilityConceptRef)constraint).getConcept().getName());
 		}
 		else if(cell.eClass().getInstanceClassName().equals(DOUBLE_CLASS_NAME)){
+			constraint = ((ValuedCell)cell).getInterpretation();
 			myCell = new CellContentDoubleImplDUGL(((pcmmm.Double)constraint).getValue());
 		}
 		else if(cell.eClass().getInstanceClassName().equals(INTEGER_CLASS_NAME)){
+			constraint = ((ValuedCell)cell).getInterpretation();
 			myCell = new CellContentIntegerImplDUGL(((pcmmm.Integer)constraint).getValue());
 		}
 		else if(cell.eClass().getInstanceClassName().equals(BOOLEAN_CLASS_NAME)){
+			constraint = ((ValuedCell)cell).getInterpretation();
 			myCell = new CellContentBooleanImplDUGL(((pcmmm.Boolean)constraint).isValue());
 		}
 		else if(cell.eClass().getInstanceClassName().equals(EMPTY_CLASS_NAME)){
