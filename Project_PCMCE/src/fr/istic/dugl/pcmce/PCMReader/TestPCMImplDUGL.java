@@ -18,8 +18,8 @@ public class TestPCMImplDUGL {
 		
 		IPCMFactory myPCMFactory = new PCMFactory();
 		IPCM myPCM = myPCMFactory.getPCM(EnumPCMImpl.PCMImplDUGL);
-		myPCM.loadPCM("Comparison_of_feed_aggregators.pcm");
-		IMatrix myMatrix = myPCM.getMatrices().get(1);
+		myPCM.loadPCM("Comparison_of_Business_Process_Modeling_Notation_tools.pcm");
+		IMatrix myMatrix = myPCM.getMatrices().get(0);
 
 		String matrixContent="";
 		matrixContent+="<p><b>Features List : </b>";
@@ -33,8 +33,13 @@ public class TestPCMImplDUGL {
 			matrixContent+= header.getVerbatim()+ "\t";
 		}
 		matrixContent+="</p>";
-		matrixContent+="<p>"+ myMatrix.isFirstRowHeaderFeatures() +"<p>";
+		matrixContent+="<p> myMatrix.isFirstRowHeaderFeatures() : "+ myMatrix.isFirstRowHeaderFeatures() +"<p>";
 		
+		matrixContent+="<p> myMatrix.getNbHeaderFeatureRows() : "+ myMatrix.getNbHeaderFeatureRows() +"<p>";
+		matrixContent+="<p> myMatrix.getNbHeaderFeatureColumn() : "+ myMatrix.getNbHeaderFeatureColumn() +"<p>";
+		
+		matrixContent+="<p> myMatrix.getNbHeaderProductRow() : "+ myMatrix.getNbHeaderProductRow()+"<p>";
+		matrixContent+="<p> myMatrix.getNbHeaderProductColumn() : "+ myMatrix.getNbHeaderProductColumn()+"<p>";
 		
 		
 		matrixContent+="<html><body><title>"+myMatrix.getName()  +"</title><h1>"+myMatrix.getName() +"</h1><table>";
@@ -52,7 +57,7 @@ public class TestPCMImplDUGL {
 		//_LOGGER.info(matrixContent);
 
 		try{
-			PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("others/Comparison_of_feed_aggregators.pcm-testImpl.html")));
+			PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("others/Comparison_of_Business_Process_Modeling_Notation_tools.pcm-testImpl.html")));
 
 			out.write(matrixContent);
 			out.close();

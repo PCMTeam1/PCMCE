@@ -24,9 +24,11 @@ public interface IMatrix {
 	  
 	  public ICell getCell(int row, int column);
 	  
+	  public int getNbHeaderProductRow();
 	  public int getNbHeaderProductColumn();
 	  
 	  public int getNbHeaderFeatureRows();
+	  public int getNbHeaderFeatureColumn();
 	  
 	  public List<ICell> getListAllCells();
 	  public ICell[][] getTabAllCells();
