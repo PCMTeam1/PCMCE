@@ -6,7 +6,6 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 
 import com.google.gwt.thirdparty.guava.common.collect.Constraint;
-import com.smartgwt.client.widgets.grid.events.CellSavedEvent;
 
 import pcmmm.Cell;
 import pcmmm.Matrix;

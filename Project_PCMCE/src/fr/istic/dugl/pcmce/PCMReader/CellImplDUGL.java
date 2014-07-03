@@ -104,7 +104,7 @@ public class CellImplDUGL implements ICell {
 		}
 		else if(cell.eClass().getInstanceClassName().equals(BOOLEAN_CLASS_NAME)){
 			constraint = ((ValuedCell)cell).getInterpretation();
-			myCell = new CellContentBooleanImplDUGL(((pcmmm.Boolean)constraint).isValue());
+			// TODO			myCell = new CellContentBooleanImplDUGL(((pcmmm.Boolean)constraint).isValue()); 
 		}
 		else if(cell.eClass().getInstanceClassName().equals(EMPTY_CLASS_NAME)){
 			myCell = new CellContentEmptyImplDUGL();
