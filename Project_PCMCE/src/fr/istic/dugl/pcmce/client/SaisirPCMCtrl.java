@@ -2,7 +2,7 @@ package fr.istic.dugl.pcmce.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-import fr.istic.dugl.pcmce.ui.generateSAISIR_PCM;
+import fr.istic.dugl.pcmce.ui.SaisirPCMUi;
 import fr.istic.dugl.pcmce.client.Project_PCMCE;
 
 public class SaisirPCMCtrl {
@@ -23,9 +23,9 @@ public class SaisirPCMCtrl {
 
 			@Override
 			public void onSuccess(String result) {
-				generateSAISIR_PCM page = (generateSAISIR_PCM) MesModules.SAISIR_PCM.getPanel();
-				page.init(result);
-				Project_PCMCE.show(MesModules.SAISIR_PCM);
+				SaisirPCMUi page = (SaisirPCMUi) MesModules.SAISIR_PCM.getPanel();
+			//	page.init(result);
+			//	Project_PCMCE.show(MesModules.SAISIR_PCM);
 			}
 		}); 
 	}

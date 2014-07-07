@@ -4,7 +4,8 @@ import java.util.Collection;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-import fr.istic.dugl.pcmce.ui.generateDETAIL_PCM;
+import fr.istic.dugl.pcmce.ui.AccueilPCMUi;
+import fr.istic.dugl.pcmce.ui.DetailPCMUi;
 
 public class DetailPCMCtrl {
 	
@@ -24,9 +25,10 @@ public class DetailPCMCtrl {
 
 			@Override
 			public void onSuccess(Collection<String> result) {
-				generateDETAIL_PCM page = (generateDETAIL_PCM) MesModules.DETAIL_PCM.getPanel();
-				page.init(result);
-				Project_PCMCE.show(MesModules.DETAIL_PCM);
+				DetailPCMUi page = (DetailPCMUi) MesModules.DETAIL_PCM.getPanel();
+				// page.init(result);
+				//AccueilPCMUi.
+				//Project_PCMCE.show(MesModules.DETAIL_PCM)
 			}
 		}); 
 	}

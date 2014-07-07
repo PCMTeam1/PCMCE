@@ -4,7 +4,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public enum MesPages {
 	
-	ACCUEIL_PCM(new fr.istic.dugl.pcmce.ui.GenerateAccueil_PCM());
+	ACCUEIL_PCM(new fr.istic.dugl.pcmce.ui.AccueilPCMUi());
 	
 	private VerticalPanel panel;
 

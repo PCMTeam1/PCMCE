@@ -4,8 +4,8 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public enum MesModules {
 	
-	SAISIR_PCM(new fr.istic.dugl.pcmce.ui.generateSAISIR_PCM()),
-	DETAIL_PCM(new fr.istic.dugl.pcmce.ui.generateDETAIL_PCM());
+	SAISIR_PCM(new fr.istic.dugl.pcmce.ui.SaisirPCMUi()),
+	DETAIL_PCM(new fr.istic.dugl.pcmce.ui.DetailPCMUi());
 	
 	private VerticalPanel panel;
 
@@ -15,6 +15,10 @@ public enum MesModules {
 	
 	public VerticalPanel getPanel() {
 		return panel;
+	}
+	
+	public void setVisible(Boolean isVisible){
+		panel.setVisible(isVisible);
 	}
 	
 }
