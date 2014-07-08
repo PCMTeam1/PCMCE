@@ -28,7 +28,6 @@ public class Project_PCMCE implements EntryPoint {
 	@Override
 	public void onModuleLoad() {
 		RootPanel.get("Project_PCMCE").add(deckPanel);
-		deckPanel.addStyleName("deckpanelSn");
 		deckPanel.add(MesPages.ACCUEIL_PCM.getPanel());
 		
 		deckPanel.showWidget(0); // Accueil
