@@ -1,5 +1,7 @@
 package fr.istic.dugl.pcmce.ui;
 
+import java.util.List;
+
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
@@ -11,6 +13,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import fr.istic.dugl.pcmce.client.DetailPCMCtrl;
 import fr.istic.dugl.pcmce.client.MesModules;
 import fr.istic.dugl.pcmce.client.Project_PCMCE;
+import fr.istic.dugl.pcmce.client.SaisirPCMCtrl;
 
 
 public class SaisirPCMUi extends VerticalPanel {
@@ -19,11 +22,12 @@ public class SaisirPCMUi extends VerticalPanel {
 	
 	HorizontalPanel BrowseBar = new HorizontalPanel();
 	TextBox OnePCM  = new TextBox();
-	ListBox lstPCMs = new ListBox();
+	static ListBox lstPCMs = new ListBox();
 	
 	Button viewPCM = new Button("Load");
 	
 	public SaisirPCMUi() {
+		new SaisirPCMCtrl();
 		init();
 	}
 
@@ -49,6 +53,12 @@ public class SaisirPCMUi extends VerticalPanel {
 				}		
 			});
 
+	}
+	
+	public static void addPCMinList(List<String> noms){
+		for (int i=0; i<noms.size(); i++) {
+			lstPCMs.addItem(noms.get(i));
+		}
 	}
 
 }
