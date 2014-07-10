@@ -9,7 +9,6 @@ import fr.istic.dugl.pcmce.ui.DetailPCMUi;
 
 public class DetailPCMCtrl {
 	
-	
 	public DetailPCMCtrl(){
 
 	}
