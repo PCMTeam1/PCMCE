@@ -2,6 +2,7 @@ package fr.istic.dugl.pcmce.ui;
 
 import java.awt.Label;
 import java.util.Collection;
+import java.util.List;
 
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Grid;
@@ -40,42 +41,16 @@ public class DetailPCMUi extends VerticalPanel{
 	}
 
 	
-	public static void generateGrid(IMatrix matrix){
+	public static void generateGrid(List<String> matrix){
 		
-		int nbRows = matrix.getNbRows();
-		int nbColumns = matrix.getNbColumn();
-		
-		grid.setTitle(matrix.getName());
-		grid.resize(nbRows, nbColumns);
-		
-		/*
-		String matrixContent="";
-		matrixContent+="<p><b>Features List : </b>";
-		for(ICell header  : myMatrix.getListHeaderFeatureCells()){
-			matrixContent+= header.getVerbatim()+ "\t";
-		}
-		matrixContent+="</p><p>";
-		
-		matrixContent+="<b>Product List : </b>";
-		for(ICell header  : myMatrix.getListHeaderProductCells()){
-			matrixContent+= header.getVerbatim()+ "\t";
-		}
+		int Rows =Integer.valueOf(matrix.get(0)).intValue();
+		int Columns = Integer.valueOf(matrix.get(1)).intValue();
+		String html = matrix.get(2);
 		
 		
-		
-		for(int i=0; i<myMatrix.getNbRows(); i++){
-			matrixContent+="<tr>";
-			for(int j=0; j<myMatrix.getNbColumn(); j++){
-				ICell myCell = myMatrix.getTabAllCells()[i][j];
-				if(myCell.getCellContent().isString()){
-				matrixContent+="<td>"+((ICellContentString)myCell.getCellContent()).getString()+"</td>";
-				}
-			}
-			matrixContent+="</td>";
-		}
-		
-
-		*/
+		grid.setHTML(Rows, Columns, html);
+		grid.resize(Rows, Columns);
+	
 		
 	}
 	

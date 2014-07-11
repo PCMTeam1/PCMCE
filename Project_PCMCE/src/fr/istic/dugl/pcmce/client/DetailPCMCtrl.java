@@ -19,21 +19,23 @@ public class DetailPCMCtrl {
 	public static void generateDETAIL_PCM(String PCM) {
 
 		SuccesServiceAsync succesService = Project_PCMCE.getSuccesservice();
-		succesService.generateDETAIL_PCM(PCM ,new AsyncCallback<IMatrix>() {
+		succesService.generateDETAIL_PCM(PCM ,new AsyncCallback<Collection<String>>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
 			}
 
 			@Override
-			public void onSuccess(IMatrix result) {
-				DetailPCMUi.generateGrid(result);
+			public void onSuccess(Collection<String> result) {
+				DetailPCMUi.generateGrid((List<String>) result);
 			}
 		}); 
 	}
 	
-	
-public static void generateMatrixList(String PCM) {
+	/*
+	 *  TODO: implement it
+	 */
+	public static void generateMatrixList(String PCM) {
 
 		SuccesServiceAsync succesService = Project_PCMCE.getSuccesservice();
 		
@@ -47,10 +49,7 @@ public static void generateMatrixList(String PCM) {
 
 			@Override
 			public void onSuccess(Collection<String> result) {
-			//	generatePCMMatrix page = (generatePCMMatrix) MesPages.DETAIL_PCM.getPanel();
-			//	page.init((List<String>) result);
-			//	Pcm.show(MesPages.DETAIL_PCM);
-				
+					
 			}
 		}); 
 	}

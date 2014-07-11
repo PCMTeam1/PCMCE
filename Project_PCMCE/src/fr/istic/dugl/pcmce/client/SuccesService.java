@@ -12,7 +12,7 @@ import fr.istic.dugl.pcmce.PCMReader.IMatrix;
 public interface SuccesService extends RemoteService {
 
 	public Collection<String> getPCMFileList();
-	public IMatrix generateDETAIL_PCM(String MyPCM);
+	public Collection<String> generateDETAIL_PCM(String MyPCM);
 	public Collection<String> generateMatrixList(String PCM);
 	
 }
