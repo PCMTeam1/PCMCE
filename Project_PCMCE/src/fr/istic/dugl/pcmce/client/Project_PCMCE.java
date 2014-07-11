@@ -31,15 +31,8 @@ public class Project_PCMCE implements EntryPoint {
 		deckPanel.add(MesPages.ACCUEIL_PCM.getPanel());
 		
 		deckPanel.showWidget(0); // Accueil
-		// Project_PCMCE.show(MesPages.ACCUEIL_PCM);
-		// generateSAISIR_PCM();
 	}
 
-	/*
-	public static void show(MesPages page) {
-		deckPanel.showWidget(page.ordinal());
-	}
-	*/
 	public static void show(String Panel) {
 		AccueilPCMUi.contentPanel_setVisible(true);
 	}

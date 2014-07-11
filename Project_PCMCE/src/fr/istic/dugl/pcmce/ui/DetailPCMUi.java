@@ -23,15 +23,13 @@ public class DetailPCMUi extends VerticalPanel{
 	static final int numModule = 2;
 
 	Button editPCM = new Button("Edit");
-	Grid grid = new Grid();
+	static Grid grid = new Grid();
 
 	public DetailPCMUi() {
 			init();
 	}
 
 	public void init() {
-		
-
 		
 		// testIncludeMatrice();
 		
@@ -42,21 +40,15 @@ public class DetailPCMUi extends VerticalPanel{
 	}
 
 	
-	public void testIncludeMatrice(){
+	public static void generateGrid(IMatrix matrix){
 		
-		/*
-		IPCMFactory myPCMFactory = new PCMFactory();
-		IPCM myPCM = myPCMFactory.getPCM(EnumPCMImpl.PCMImplDUGL);
-		myPCM.loadPCM("Comparison_of_Business_Process_Modeling_Notation_tools.pcm");
-		IMatrix myMatrix = myPCM.getMatrices().get(0);
-
-		int nbRows = myMatrix.getNbRows();
-		int nbColumns = myMatrix.getNbColumn();
+		int nbRows = matrix.getNbRows();
+		int nbColumns = matrix.getNbColumn();
 		
-		grid.setTitle(myMatrix.getName());
+		grid.setTitle(matrix.getName());
 		grid.resize(nbRows, nbColumns);
 		
-		
+		/*
 		String matrixContent="";
 		matrixContent+="<p><b>Features List : </b>";
 		for(ICell header  : myMatrix.getListHeaderFeatureCells()){

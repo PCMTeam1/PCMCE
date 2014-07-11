@@ -9,6 +9,11 @@ import javax.servlet.http.HttpSession;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
+import fr.istic.dugl.pcmce.PCMReader.EnumPCMImpl;
+import fr.istic.dugl.pcmce.PCMReader.IMatrix;
+import fr.istic.dugl.pcmce.PCMReader.IPCM;
+import fr.istic.dugl.pcmce.PCMReader.IPCMFactory;
+import fr.istic.dugl.pcmce.PCMReader.PCMFactory;
 import fr.istic.dugl.pcmce.client.SuccesService;
 
 public class SuccesServiceImpl extends RemoteServiceServlet implements SuccesService {
@@ -45,8 +50,20 @@ public class SuccesServiceImpl extends RemoteServiceServlet implements SuccesSer
 	
 	
 
-	public Collection<String> generateDETAIL_PCM(String MyPCM){
-		List<String> col = new ArrayList<String>();
-		return col;
+	public IMatrix generateDETAIL_PCM(String MyPCM){
+		
+		IPCMFactory myPCMFactory = new PCMFactory();
+		IPCM myPCM = myPCMFactory.getPCM(EnumPCMImpl.PCMImplDUGL);
+		myPCM.loadPCM(MyPCM);
+		IMatrix myMatrix = myPCM.getMatrices().get(0);
+				
+		return myMatrix;
+	}
+
+
+	@Override
+	public Collection<String> generateMatrixList(String PCM) {
+		// TODO Auto-generated method stub
+		return null;
 	};
 }

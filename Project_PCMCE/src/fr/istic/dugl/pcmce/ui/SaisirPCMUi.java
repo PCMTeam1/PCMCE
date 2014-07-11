@@ -49,18 +49,26 @@ public class SaisirPCMUi extends VerticalPanel {
 			@Override
 			public void onClick(ClickEvent event) {
 					DetailPCMCtrl.generateDETAIL_PCM(lstPCMs.getTitle());
+				//	generateMatrixList(lstPCMs.getTitle());  // TODO: need finish implement this function
+					
 					String DetailPCM = "DetailPCM";
-					Project_PCMCE.show(DetailPCM);
+					Project_PCMCE.show(DetailPCM); // set visible pcm grid
 				}		
 			});
 
 	}
-	
+		
 	public static void addPCMinList(List<String> noms){
 		for (int i=0; i<noms.size(); i++) {
 			lstPCMs.addItem(noms.get(i));
 		}
 	}
+	
+	
+	public static void generateMatrixList(String PCM) {
+		DetailPCMCtrl.generateMatrixList(PCM);
+	}
+	
 
 }
 
