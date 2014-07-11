@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Grid;
+import com.google.gwt.user.client.ui.HTMLTable;
 import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -46,10 +47,9 @@ public class DetailPCMUi extends VerticalPanel{
 		int Rows =Integer.valueOf(matrix.get(0)).intValue();
 		int Columns = Integer.valueOf(matrix.get(1)).intValue();
 		String html = matrix.get(2);
-		
-		
-		grid.setHTML(Rows, Columns, html);
+
 		grid.resize(Rows, Columns);
+		grid.setText(Rows, Columns, html);
 	
 		
 	}

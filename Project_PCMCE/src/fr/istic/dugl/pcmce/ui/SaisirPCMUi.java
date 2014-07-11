@@ -48,7 +48,9 @@ public class SaisirPCMUi extends VerticalPanel {
 			
 			@Override
 			public void onClick(ClickEvent event) {
-					DetailPCMCtrl.generateDETAIL_PCM(lstPCMs.getTitle());
+					String PCMSelected = lstPCMs.getValue(lstPCMs.getSelectedIndex());
+					DetailPCMCtrl.generateDETAIL_PCM(PCMSelected);
+					
 				//	generateMatrixList(lstPCMs.getTitle());  // TODO: need finish implement this function
 					
 					String DetailPCM = "DetailPCM";

@@ -29,7 +29,7 @@ public class SuccesServiceImpl extends RemoteServiceServlet implements SuccesSer
 				names = new ArrayList<String>();
 				session.setAttribute("listOfPCMs", names);
 			}
-			for (String s : getPCMFileNames("../input/")) {
+			for (String s : getPCMFileNames("../war/input/")) {
 				names.add(s);
 			}
 			return names;
@@ -50,56 +50,29 @@ public class SuccesServiceImpl extends RemoteServiceServlet implements SuccesSer
 	}
 
 	@Override
-	public Collection<String> generateDETAIL_PCM(String MyPCM){
+	public Collection<String> generateDETAIL_PCM(String PCM){
 		
 		IPCMFactory myPCMFactory = new PCMFactory();
 		IPCM myPCM = myPCMFactory.getPCM(EnumPCMImpl.PCMImplDUGL);
-		myPCM.loadPCM(MyPCM);
+		myPCM.loadPCM(PCM);
 		IMatrix myMatrix = myPCM.getMatrices().get(0);
 		
 		List<String> theMatrix = new ArrayList<String>();
+		String htmlContent = "";
+		
+		List<ICell> allCell = myMatrix.getListAllCells();
+		
+		for(ICell cell : allCell){
+			htmlContent = htmlContent+" "+cell.getVerbatim();
+		}
+		
 		
 		int nbRows = myMatrix.getNbRows();
 		int nbColumns = myMatrix.getNbColumn();
-		
-		String matrixContent="";
-		matrixContent+="<p><b>Features List : </b>";
-		for(ICell header  : myMatrix.getListHeaderFeatureCells()){
-			matrixContent+= header.getVerbatim()+ "\t";
-		}
-		matrixContent+="</p><p>";
-		
-		matrixContent+="<b>Product List : </b>";
-		for(ICell header  : myMatrix.getListHeaderProductCells()){
-			matrixContent+= header.getVerbatim()+ "\t";
-		}
-		matrixContent+="</p>";
-		matrixContent+="<p> myMatrix.isFirstRowHeaderFeatures() : "+ myMatrix.isFirstRowHeaderFeatures() +"<p>";
-		
-		matrixContent+="<p> myMatrix.getNbHeaderFeatureRows() : "+ myMatrix.getNbHeaderFeatureRows() +"<p>";
-		matrixContent+="<p> myMatrix.getNbHeaderFeatureColumn() : "+ myMatrix.getNbHeaderFeatureColumn() +"<p>";
-		
-		matrixContent+="<p> myMatrix.getNbHeaderProductRow() : "+ myMatrix.getNbHeaderProductRow()+"<p>";
-		matrixContent+="<p> myMatrix.getNbHeaderProductColumn() : "+ myMatrix.getNbHeaderProductColumn()+"<p>";
-		
-		
-		matrixContent+="<html><body><title>"+myMatrix.getName()  +"</title><h1>"+myMatrix.getName() +"</h1><table>";
-		for(int i=0; i<myMatrix.getNbRows(); i++){
-			matrixContent+="<tr>";
-			for(int j=0; j<myMatrix.getNbColumn(); j++){
-				ICell myCell = myMatrix.getTabAllCells()[i][j];
-				if(myCell.getCellContent().isString()){
-				matrixContent+="<td>"+((ICellContentString)myCell.getCellContent()).getString()+"</td>";
-				}
-			}
-			matrixContent+="</td>";
-		}
-		matrixContent+="</table>";
-		
+			
 		theMatrix.add(0, String.valueOf(nbRows));
 		theMatrix.add(1, String.valueOf(nbColumns));
-		theMatrix.add(3, matrixContent);
-		
+		theMatrix.add(2, htmlContent);
 		
 		return theMatrix;
 	}
